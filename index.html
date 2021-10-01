@@ -1,0 +1,30 @@
+<!DOCTYPE htlm>
+<html lang="en">
+    <head>
+        <title>Hügelhaus</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+        <link async rel="stylesheet" href="./styles/site.css">
+        <script src="./scripts/helpers.js"></script>
+        <script src="./scripts/menu.js"></script>
+        <script src="./scripts/content.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="menubutton">|||</div>
+            <div 
+                class="header-text"
+                onclick='content.home();menu.hideMenu();'>
+                <span><img src="./images/home.svg" style="height:30px;margin:0 0 -7px 12px;"/></span>
+            </div>
+        </div>
+        <div id="menu"></div>
+        <div id="content"></div>
+    </body>
+    <script>
+        let menu = new Menu()
+        let content = new Content()
+        content.route()
+    </script>
+</html>

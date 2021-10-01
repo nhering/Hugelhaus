@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    color: #E0E0E0;
+}
+
+.hugelhaus {
+    background-image: url("../images/Hugelhaus.svg");
+    background-size: 350px 120px;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 120px;
+    background-position: top;
+}
+
+.hide {
+    display: none;
+}
+
+h5 {
+    font-size: 14px;
+    color: #acccff;
+    font-weight: 100;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: "header" "content";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(70,70,84);
+}
+
+.header-text {
+    display: inline-block;
+    font-size: 30px;
+    letter-spacing: 2;
+    cursor: pointer;
+}
+
+#header {
+    display: inline-block;
+    grid-area: header;
+    background: rgb(64,64,74);
+    border-bottom: solid 3px black;
+    padding: 10px 20px;
+    text-shadow: 0 0 5px black;
+    letter-spacing: 1;
+    z-index: 1;
+}
+
+#content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: '. post .';
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.img-caption {
+    max-width: 1000px;
+    border: solid 2px #111;
+    border-radius: 6px;
+}
+
+img {
+    border-radius: 6px;
+    max-width: 1000px;
+}
+
+.caption {
+    padding: 6px;
+    line-height: 1.5;
+    font-size: 12px;
+    letter-spacing: 2;
+    background-color: #111;
+}
+
+p {
+    max-width: 1000px;
+    line-height: 1.5em;
+}
+
+.button {
+    background-color: rgba(255,255,255,.1);
+    border: solid 1px #222;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: rgba(255,255,255,.2);
+}
+
+.container {
+    grid-area: post;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* #region Menu */
+
+#menubutton {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+    letter-spacing: 3;
+    transform: rotate(90deg);
+    width: 25px;
+    margin-right: 10px;
+    user-select: none;
+}
+
+#menu {
+    position: fixed;
+    top: 57;
+    left: -240;
+    bottom: 0;
+    width: 197px;
+    height: 100vh;
+    background: rgb(64,64,74);
+    border-right: solid 3px black;
+    box-shadow: 3px 0 40px rgb(24,24,34);
+    color: #EEE;
+    padding: 20px;
+    text-shadow: 0 0 3px black;
+}
+
+.menu-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    width: 195px;
+    column-gap: 12px;
+    row-gap: 12px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+#searchinput {
+    width: 195px;
+    grid-column: 1 / span 2;
+    color: black;
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#taginput {
+    width: 185px;
+    background-color: #EEE;
+    grid-column: 1 / span 2;
+    padding: 6px;
+    border-radius: 3px;
+    text-align: left;
+    font-size: 15px;
+    max-height: 104px;
+    overflow-x: hidden;
+    overflow: auto;
+}
+
+.tag-item {
+    margin-bottom: 6px;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+}
+
+label {
+    color: black;
+    text-shadow: none;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding-left: 0;
+    user-select: none;
+}
+
+.menu-year {
+    border: solid 1px #000;
+    border-radius: 3px;
+    margin-bottom: 6px;
+}
+
+.menu-year-header {
+    padding: 6px;
+    font-size: 20px;
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.menu-year-header:hover {
+    background-color: rgba(255,255,255,.2);
+}
+
+.menu-year-items {
+    margin: 6px 0;
+}
+
+.menu-item {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 4px;
+    padding: 4px 0;
+}
+
+.menu-item:hover {
+    background-color: rgba(255,255,255,.1);
+}
+
+.menu-item > .date {
+    padding-top: 2px;
+    font-size: 11px;
+    color: #acccff;
+    width: 45px;
+    text-align: right;
+}
+
+/* #endregion */
+
+/* #region carousel */
+
+.carousel {
+    max-width: 1000px;
+    border: solid 2px #111;
+    border-radius: 6px;
+}
+
+.carousel > img {
+    margin-top: -38px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'left . right';
+    cursor: pointer;
+}
+
+.controls > * {
+    background-size: 50px;
+    position: relative;
+    margin-top: -12;
+}
+
+.controls > .left {    
+    grid-area: left;
+    background-image: url("../images/arrow.svg");
+    background-repeat: no-repeat;
+    margin-left: -12;
+    height: 50px;
+    width: 50px;
+}
+
+.controls > .right {
+    grid-area: right;
+    background-image: url("../images/arrow.svg");
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    margin-right: -12;
+    height: 50px;
+    width: 50px;
+}
+
+/* #endregion */
