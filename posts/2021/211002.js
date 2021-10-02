@@ -7,7 +7,8 @@ content.innerHTML = `\
     <p>My brother came by to deliver a very nice house warming gift that is very litteraly meant \
     to warm the house. He got me a ton of wood pellets. This was such a nice gesture and it helped \
     me get a sense of how long it would take to unload a pallet of them. I just ordered four tons \
-    of the same brand and wasn't sure how much work it would be.</p>\
+    of the same brand and wasn't sure how much work it would be. We were able to unload them from \
+    his truck in about 15 minutes.</p>\
     <br>\
     <p>When they deliver the pellets they may be able to set them in the garage but I don't know \
     what kind of equipment they have for unloading them off of the truck. So they may end up leaving \
