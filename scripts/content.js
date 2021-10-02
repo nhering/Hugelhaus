@@ -4,7 +4,7 @@ class Content {
         window.addEventListener('resize',()=>{
             this.resize()
         })
-        this.root = "NHBlog"
+        this.root = "Hugelhaus"
     }
 
     home(){
@@ -142,6 +142,7 @@ class Carousel {
     }
 
     previous(){
+        console.log("previous")
         if (this.currentIndex > 0){
             this.currentIndex--
         } else {
@@ -151,6 +152,7 @@ class Carousel {
     }
 
     next(){
+        console.log("next")
         if (this.currentIndex < this.sources.length - 1){
             this.currentIndex++
         } else {
@@ -160,8 +162,11 @@ class Carousel {
     }
 
     changeSource(){
+        console.log("changeSource")
         this.localPath = this.sources[this.currentIndex]
+        console.log(this.localPath)
         let src = `${this.basePath}${this.localPath}`
+        console.log(src)
         this.img.src = src
     }
 }
