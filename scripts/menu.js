@@ -394,5 +394,12 @@ const posts = [
             tags.MISCELLANEOUS, tags.MOVE_IN
         ],
         src: './posts/2021/210925.js',
+    },
+    {   id: 211002, year: 2021, month: 10, day: 2,
+        menuText: "Pellet Stove & Lawnmower",
+        tags: [
+            tags.MISCELLANEOUS
+        ],
+        src: './posts/2021/211002.js',
     }
 ]

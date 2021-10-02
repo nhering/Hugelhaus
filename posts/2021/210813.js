@@ -21,10 +21,20 @@ content.innerHTML = "\
     get rid off all of this myself. They even left me some pizza in the fridge so I could throw \
     that away for them too. How nice.</p>\
     <br>\
+    <p>I discovered about 15 very rusty paint cans hidden behind a half fnished wall in \
+    the basement near the water softener. These will need special treatment as far as disposing \
+    of them. That'll be a trip to the county waste disposal facility to handle hazardous materials.</p>\
+    <br>\
     <p>I spent a few hours going from room to room finishing collecting the random items \
     they left behind. I set a few things aside that might be useful, mostly free standing \
     wire shelving that was in pretty good shape. I put those in the basement and the rest \
     got sorted into the garage.</p>\
+    <br>\
+    <p>The most effort was spent on a section of coutch that was in the master bedroom. It was \
+    the corner piece of a wrap around. I tried to fit it through the door and down the hall \
+    but I seriously couldn't make that happen. I have no clue how they got it in the room in the \
+    first place. I ended up tearing off the cushions which were attached and then I could manage \
+    to get it down the hall. Needless to say, I wasn't planning on keeping it anyway.</p>\
     <br>\
     <p>The stuff I was not going to keep was enough to fill the whole two car garage. Some of \
     it will get donated, some recycled, and everything burnable... You guessed it, I'm going to \
