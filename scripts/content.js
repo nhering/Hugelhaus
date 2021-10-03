@@ -101,6 +101,10 @@ class Content {
             .forEach((e) => {
                 this.fitCaption(e,w)
             })
+        document.querySelectorAll('.carousel')
+            .forEach((e) => {
+                this.fitCaption(e,w)
+            })
     }
 
     fitCaption(caption,width){
@@ -123,7 +127,7 @@ class Carousel {
     constructor(data = {}){
         console.log('Carousel.constructor')
         // elements
-        this.ele = data.ele || document.createElement('div')
+        this.ele = data.ele
         this.img = this.ele.querySelector('img')
         this.left = this.ele.querySelector('.left')
         this.right = this.ele.querySelector('.right')
@@ -142,7 +146,7 @@ class Carousel {
     }
 
     previous(){
-        console.log("previous")
+        // console.log("previous")
         if (this.currentIndex > 0){
             this.currentIndex--
         } else {
@@ -152,7 +156,7 @@ class Carousel {
     }
 
     next(){
-        console.log("next")
+        // console.log("next")
         if (this.currentIndex < this.sources.length - 1){
             this.currentIndex++
         } else {
@@ -162,11 +166,9 @@ class Carousel {
     }
 
     changeSource(){
-        console.log("changeSource")
+        // console.log("changeSource")
         this.localPath = this.sources[this.currentIndex]
-        console.log(this.localPath)
         let src = `${this.basePath}${this.localPath}`
-        console.log(src)
         this.img.src = src
     }
 }
