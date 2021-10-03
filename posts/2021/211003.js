@@ -12,7 +12,13 @@ content.innerHTML = `\
     <p>I'd like to be able to mow the lawn, but first I should try to get rid of \
     the wasps. Since it was raining today, I wasn't going to mow anyway. So, I put 
     some cardboard on the burn pile and put the dogwood brush on top of that. I threw 
-    a flare on it to get it burning.</p>\
+    a flare on it to get it burning. Then I carefully pulled a pallet from the wet \
+    side of the burn pile. That's where the wasps were.</p>\
+    <br>\
+    <p>I think because the temperature was a bit cooler today they weren't as easliy \
+    stired. The fire was starting to catch pretty well and I managed to get the pallet \
+    on top of the fire. This helped channel the air toward the fire and actually helped \
+    focus the heat on the wet pallet.</p>\
     <br>\
     <div class='carousel' data-sources='${carousel211003}'>\
         <div class='controls'>\
@@ -22,4 +28,10 @@ content.innerHTML = `\
         <img src='./images/2021/10/20211003_111640.jpg'/ >\
         <div class='caption'>The first time I've had a fire in the burn pile.</div>\
     </div>\
+    <br>\
+    <p>Unfortunately, despite the smoke and the heat, the wasps were still buzzing around. \
+    Fortunately, they didn't notice or attack me. I think their nest must be underground. \
+    So, I think I'll wait till it's even colder outside and get a good ripping fire going \
+    directly on the spot where I think their nest is.</p>\
+    <br>\
 `
