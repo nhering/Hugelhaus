@@ -12,7 +12,9 @@ content.innerHTML = `\
     <br>\
     <p>When they deliver the pellets they may be able to set them in the garage but I don't know \
     what kind of equipment they have for unloading them off of the truck. So they may end up leaving \
-    them in the driveway for me to manually move them into the garage.</p>\
+    them in the driveway for me to manually move them into the garage. I'm sure it will take me quite \
+    a bit longer to move a ton by myself, but at least now I have an idea of what I should be prepared \
+    for.</p>\
     <br>\
     <p>While he was here, he helped me remove the mower deck from my new lawn tractor and coat all the \
     rust prone areas with fluid film. Once we finished with that, we connected the battery, added oil, 
