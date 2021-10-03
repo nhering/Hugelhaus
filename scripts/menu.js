@@ -401,5 +401,12 @@ const posts = [
             tags.MISCELLANEOUS
         ],
         src: './posts/2021/211002.js',
+    },
+    {   id: 211003, year: 2021, month: 10, day: 3,
+        menuText: "Smoke 'em Out",
+        tags: [
+            tags.MISCELLANEOUS, tags.CLEAN_UP
+        ],
+        src: './posts/2021/211003.js',
     }
 ]
