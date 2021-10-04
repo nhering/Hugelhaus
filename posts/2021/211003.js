@@ -30,8 +30,10 @@ content.innerHTML = `\
     </div>\
     <br>\
     <p>Unfortunately, despite the smoke and the heat, the wasps were still buzzing around. \
-    Fortunately, they didn't notice or attack me. I think their nest must be underground. \
-    So, I think I'll wait till it's even colder outside and get a good ripping fire going \
-    directly on the spot where I think their nest is.</p>\
+    Fortunately, they didn't notice or attack me. That actually happened a couple weeks ago \
+    and it sucked. I was trying to clean up the burn pile and when I moved a pallet, they \
+    attacked me. I think their nest must be underground. So, I think I'll wait till it's even \
+    colder outside and get a good ripping fire going directly on the spot where I think their \
+    nest is.</p>\
     <br>\
 `
