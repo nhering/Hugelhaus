@@ -6,8 +6,9 @@ content.innerHTML = "\
     <br>\
     <p>When I was at the title company one of their employees told me that the sellers\
     were in the office the day before. The sellers said they were going to burn of all \
-    their old furniture. And the person from the title company told them they should \
-    give it to me. She knew I was moving across the country with pretty much no furniture.</p>\
+    their old furniture, at least the stuff they weren't taking with them. And the person \
+    from the title company told them they should give it to me. She knew I was moving \
+    across the country with pretty much no furniture.</p>\
     <br>\
     <p>I didn't respond, but I was thinking NO!!! Their taste and mine don't \
     overlap at all. And then a few days later after the title signing I met the sellers at \
