@@ -5,7 +5,7 @@ content.innerHTML = "\
     <p>The previous owners took most of their stuff, but not all of it.</p>\
     <br>\
     <p>When I was at the title company one of their employees told me that the sellers\
-    were in the office the day before. The sellers said they were going to get rid of all \
+    were in the office the day before. The sellers said they were going to burn of all \
     their old furniture. And the person from the title company told them they should \
     give it to me. She knew I was moving across the country with pretty much no furniture.</p>\
     <br>\
