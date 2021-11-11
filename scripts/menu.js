@@ -408,5 +408,12 @@ const posts = [
             tags.MISCELLANEOUS, tags.CLEAN_UP
         ],
         src: './posts/2021/211003.js',
+    },
+    {   id: 211015, year: 2021, month: 10, day: 15,
+        menuText: "First week",
+        tags: [
+            tags.MISCELLANEOUS, tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS
+        ],
+        src: './posts/2021/211015.js',
     }
 ]
