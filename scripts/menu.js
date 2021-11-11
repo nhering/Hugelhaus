@@ -308,6 +308,7 @@ const tags = {
     FRIENDS_FAMILY: 'Friends & Family',
     FOYER: "Foyer",
     GARAGE: "Garage",
+    LIVINGROOM: "Livingroom",
     MISCELLANEOUS: "Miscellaneous",
     MOVE_IN: "Move In",
     IMPROVEMENTS: "Improvements",
