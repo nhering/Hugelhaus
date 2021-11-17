@@ -413,7 +413,7 @@ const posts = [
     {   id: 211015, year: 2021, month: 10, day: 15,
         menuText: "First week",
         tags: [
-            tags.MISCELLANEOUS, tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS
+            tags.MISCELLANEOUS, tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS, tags.MOVE_IN
         ],
         src: './posts/2021/211015.js',
     }

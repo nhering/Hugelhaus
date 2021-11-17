@@ -5,6 +5,7 @@ class Content {
             this.resize()
         })
         this.root = "Hugelhaus"
+        this.post = null
     }
 
     home(){
@@ -27,6 +28,7 @@ class Content {
         }
 
         post = this.getPost(args.id)
+        this.post = post
         if (!post){
             window.location = window.location.pathname
         } else {
@@ -73,6 +75,7 @@ class Content {
         this.div.appendChild(container)
         this.resize()
         this.buildCarousels()
+        this.addTags(container)
     }
 
     set src(src){
@@ -92,6 +95,24 @@ class Content {
         ele.setAttribute('src',src)
         ele.setAttribute('id','content-script')
         document.querySelector('head').appendChild(ele)
+    }
+
+    addTags(container){
+        console.log("addTags")
+        console.log(this.post)
+        let ele = document.createElement('fieldset')
+        ele.classList.add('tags')
+        let legend = document.createElement('legend')
+        legend.classList.add('legend')
+        legend.innerText = 'TAGS'
+        ele.appendChild(legend)
+        this.post.tags.forEach((t) => {
+            let tag = document.createElement('div')
+            tag.classList.add('tag')
+            tag.innerText = t
+            ele.appendChild(tag)
+        })
+        container.appendChild(ele)
     }
 
     resize(){
@@ -125,7 +146,6 @@ class Content {
 
 class Carousel {
     constructor(data = {}){
-        console.log('Carousel.constructor')
         // elements
         this.ele = data.ele
         this.img = this.ele.querySelector('img')
@@ -146,7 +166,6 @@ class Carousel {
     }
 
     previous(){
-        // console.log("previous")
         if (this.currentIndex > 0){
             this.currentIndex--
         } else {
@@ -156,7 +175,6 @@ class Carousel {
     }
 
     next(){
-        // console.log("next")
         if (this.currentIndex < this.sources.length - 1){
             this.currentIndex++
         } else {
@@ -166,7 +184,6 @@ class Carousel {
     }
 
     changeSource(){
-        // console.log("changeSource")
         this.localPath = this.sources[this.currentIndex]
         let src = `${this.basePath}${this.localPath}`
         this.img.src = src

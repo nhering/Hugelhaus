@@ -107,6 +107,33 @@ p {
     margin-bottom: 100px;
 }
 
+.tags {
+    margin-top: 24px;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    border-color: 95ccff;
+}
+
+.tag {
+    color: #979797;
+    letter-spacing: .15em;
+    display: inline-block;
+    margin: 4px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: lighter;
+    border-radius: 12px;
+    border: 2px solid #6e6e6e;
+}
+
+.legend {
+    color: #95ccff;
+    font-size: 12px;
+    letter-spacing: .5em;
+    margin-left: 12px;
+    padding: 0 10;
+}
 
 /* #region Menu */
 
