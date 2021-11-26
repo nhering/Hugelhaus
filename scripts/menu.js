@@ -411,8 +411,7 @@ const posts = [
         ],
         src: './posts/2021/211003.js',
     },
-    {
-        id: 211008, year: 2021, month: 10, day: 8,
+    {   id: 211008, year: 2021, month: 10, day: 8,
         menuText: "Pellet Deleviery",
         tags: [
             tags.UTILITIES, tags.GARAGE
@@ -426,56 +425,42 @@ const posts = [
         ],
         src: './posts/2021/211015.js',
     },
-    // {
-    //     id: 211110, year: 2021, month: 11, day: 10,
-    //     menuText: "Ambience Outside And In",
-    //     tags: [
-    //         tags.LITTLE_MOMENTS
-    //     ],
-    //     src: './posts/2021/211110.js',
-    // },
-    // {
-    //     id: 211111, year: 2021, month: 11, day: 11,
+    {    id: 211110, year: 2021, month: 11, day: 10,
+        menuText: "Scenic Moments",
+        tags: [
+            tags.LITTLE_MOMENTS
+        ],
+        src: './posts/2021/211110.js',
+    },
+    // {    id: 211111, year: 2021, month: 11, day: 11,
     //     menuText: "Water Treatment Install",
     //     tags: [
     //         tags.PLUMBING, tags.UTILITIES, tags.IMPROVEMENTS, tags.BASEMENT
     //     ],
     //     src: './posts/2021/211111.js',
     // },
-    // {
-    //     id: 211114, year: 2021, month: 11, day: 14,
-    //     menuText: "First Snow",
-    //     tags: [
-    //         tags.LITTLE_MOMENTS, tags.YARD, tags.LIVINGROOM
-    //     ],
-    //     src: './posts/2021/211114.js',
-    // },
-    // {
-    //     id: 211116, year: 2021, month: 11, day: 16,
+    // {    id: 211116, year: 2021, month: 11, day: 16,
     //     menuText: "Winterizing",
     //     tags: [
     //         tags.BATHROOM, tags.BEDROOM, tags.LIVINGROOM, tags.UTILITIES
     //     ],
     //     src: './posts/2021/211116.js',
     // },
-    // {
-    //     id: 211117, year: 2021, month: 11, day: 17,
+    // {    id: 211117, year: 2021, month: 11, day: 17,
     //     menuText: "Another Burn",
     //     tags: [
     //         tags.CLEAN_UP, tags.IMPROVEMENTS, tags.MOVE_IN
     //     ],
     //     src: './posts/2021/211117.js',
     // },
-    // {
-    //     id: 211122, year: 2021, month: 11, day: 22,
+    // {    id: 211122, year: 2021, month: 11, day: 22,
     //     menuText: "",
     //     tags: [
     //         tags.CLEAN_UP, tags.IMPROVEMENTS, tags.MOVE_IN
     //     ],
     //     src: './posts/2021/211122.js',
     // },
-    // {
-    //     id: 211123, year: 2021, month: 11, day: 23,
+    // {    id: 211123, year: 2021, month: 11, day: 23,
     //     menuText: "Generator",
     //     tags: [
     //         tags.UTILITIES
