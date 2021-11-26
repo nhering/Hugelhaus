@@ -458,13 +458,13 @@ const posts = [
         ],
         src: './posts/2021/211116.js',
     },
-    // {    id: 211117, year: 2021, month: 11, day: 17,
-    //     menuText: "Another Burn",
-    //     tags: [
-    //         tags.CLEAN_UP, tags.IMPROVEMENTS, tags.MOVE_IN
-    //     ],
-    //     src: './posts/2021/211117.js',
-    // },
+    {    id: 211117, year: 2021, month: 11, day: 17,
+        menuText: "Another Burn",
+        tags: [
+            tags.CLEAN_UP, tags.MOVE_IN
+        ],
+        src: './posts/2021/211117.js',
+    },
     // {    id: 211122, year: 2021, month: 11, day: 22,
     //     menuText: "",
     //     tags: [
