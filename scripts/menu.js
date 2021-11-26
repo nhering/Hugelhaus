@@ -439,13 +439,13 @@ const posts = [
         ],
         src: './posts/2021/211111.js',
     },
-    // {    id: 211116, year: 2021, month: 11, day: 16,
-    //     menuText: "Winterizing",
-    //     tags: [
-    //         tags.BATHROOM, tags.BEDROOM, tags.LIVINGROOM, tags.UTILITIES
-    //     ],
-    //     src: './posts/2021/211116.js',
-    // },
+    {    id: 211116, year: 2021, month: 11, day: 16,
+        menuText: "Winterizing",
+        tags: [
+            tags.BATHROOM, tags.BEDROOM, tags.LIVINGROOM, tags.UTILITIES
+        ],
+        src: './posts/2021/211116.js',
+    },
     // {    id: 211117, year: 2021, month: 11, day: 17,
     //     menuText: "Another Burn",
     //     tags: [
