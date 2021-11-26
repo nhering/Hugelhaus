@@ -1,8 +1,10 @@
 class Menu {
     constructor(){
+        this.version = '2021-11-26'
         this.left = -240
         this.selectedTags = []
         this.setLocalStorage()
+        this.refreshIfNeeded()
         this.shownInput = null
 
         this.menuDiv = document.getElementById("menu")
@@ -21,7 +23,16 @@ class Menu {
         let t = localStorage.getItem('selectedTags')
         if (!t) localStorage.setItem('selectedTags',JSON.stringify([]))
         this.selectedTags = JSON.parse(t)
-        // localStorage.setItem('selectedTags',JSON.stringify([]))
+    }
+
+    refreshIfNeeded(){
+        let vs = localStorage.getItem('version')
+        if (vs !== this.version) 
+        {
+            localStorage.setItem('searchTerms','')
+            localStorage.setItem('selectedTags',JSON.stringify([]))
+            localStorage.setItem('vs',this.version)
+        }
     }
 
     loadItems(posts){
@@ -47,6 +58,7 @@ class Menu {
 
             let menuYearItems = document.createElement('div')
             menuYearItems.classList.add('menu-year-items')
+            menuYearItems.classList.add('hide')
             menuYearItems.id = g.year
             g.posts.forEach((p)=>{
                 let li = document.createElement('div')
