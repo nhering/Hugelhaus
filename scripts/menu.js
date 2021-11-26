@@ -432,13 +432,13 @@ const posts = [
         ],
         src: './posts/2021/211110.js',
     },
-    // {    id: 211111, year: 2021, month: 11, day: 11,
-    //     menuText: "Water Treatment Install",
-    //     tags: [
-    //         tags.PLUMBING, tags.UTILITIES, tags.IMPROVEMENTS, tags.BASEMENT
-    //     ],
-    //     src: './posts/2021/211111.js',
-    // },
+    {    id: 211111, year: 2021, month: 11, day: 11,
+        menuText: "Water Treatment Install",
+        tags: [
+            tags.PLUMBING, tags.UTILITIES, tags.IMPROVEMENTS, tags.BASEMENT
+        ],
+        src: './posts/2021/211111.js',
+    },
     // {    id: 211116, year: 2021, month: 11, day: 16,
     //     menuText: "Winterizing",
     //     tags: [
