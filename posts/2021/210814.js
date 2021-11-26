@@ -57,7 +57,7 @@ content.innerHTML = "\
     was that he changed his address and that was the last time he responded to my texts.</p>\
     <br>\
     <p>I tried calling the Verison agent and his voicemail inbox was full. Seriously? I texted multiple \
-    times with no response. So, frustrating that I gave up on Verison's Home LTE. UGH!</p>\
+    times with no response. So frustrating that I gave up on Verison's Home LTE. UGH!</p>\
     <br>\
     <p>At this point I started calling every provider I could with the exception of HughesNet and ViaSat. \
     Those two have data caps that I thought would render their service useless after a few days of \

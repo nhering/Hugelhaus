@@ -14,6 +14,10 @@ const carousel211015b = JSON.stringify([
     '/images/2021/11/20211111_160728.jpg',
     '/images/2021/11/20211111_160656.jpg',
     '/images/2021/11/20211111_162444.jpg',
+    '/images/2021/11/20211113_090230.jpg',
+    '/images/2021/11/20211117_155958.jpg',
+    '/images/2021/11/20211117_162006.jpg',
+    '/images/2021/11/20211117_162048.jpg',
 ])
 
 content.innerHTML = `\
@@ -54,8 +58,8 @@ content.innerHTML = `\
         <div class='caption'>The view of the backyard before and after mowing the lawn.</div>\
     </div>\
     <br>\
-    <p><strong style='color:#FFF'>Wednesday</strong> I knew there was trash left obscured by the overgrowth at the edges of the yard. \
-    So, I started the process of removing all that from the property. Here are some pictres of items I've removed along the way.\
+    <p><strong style='color:#FFF'>Wednesday</strong> I knew there was trash left, obscured by the overgrowth at the edges of the yard. \
+    So, I started the process of removing all that from the property. Here are some pictures of items I've removed along the way.\
     </p>\
     <br>\
     <div class='carousel' data-sources='${carousel211015b}'>\
@@ -67,12 +71,12 @@ content.innerHTML = `\
         <div class='caption'>Items left in the yard that needed to be removed.</div>\
     </div>\
     <br>\
-    <p><strong style='color:#FFF'>Thursday</strong> The process of getting to this point has been has entailed much more than the \
+    <p><strong style='color:#FFF'>Thursday</strong> The process of getting to this point has entailed much more than the \
     difficult process of a property purchase. It's nice to look at the sunset and appreciate it as the end of more than just the day.\
     </p>\
     <br>\
     <div class='img-caption'>\
         <img src='./images/2021/10/20211028_073810.jpg'/ >\
-        <div class='caption'>Sunset looking out at the backyard to the north.</div>\
+        <div class='caption'>The backyard at sunset.</div>\
     </div>\
 `

@@ -308,13 +308,14 @@ const tags = {
     FRIENDS_FAMILY: 'Friends & Family',
     FOYER: "Foyer",
     GARAGE: "Garage",
-    LIVINGROOM: "Livingroom",
-    MISCELLANEOUS: "Miscellaneous",
-    MOVE_IN: "Move In",
     IMPROVEMENTS: "Improvements",
     KITCHEN: "Kitchen",
+    LITTLE_MOMENTS: "Little Moments",
+    LIVINGROOM: "Livingroom",
+    MOVE_IN: "Move In",
     PLUMBING: "Plumbing",
     REPAIRS: "Repairs",
+    UTILITIES: "Utilities",
     YARD: 'Yard',
 }
 
@@ -322,42 +323,42 @@ const posts = [
     {   id: 210605, year: 2021, month: 6, day: 5,
         menuText: "First Impressions",
         tags: [
-            tags.MISCELLANEOUS
+            tags.MOVE_IN
         ],
         src: './posts/2021/210605.js',
     },
     {   id: 210619, year: 2021, month: 6, day: 19,
         menuText: "Home Inspection",
         tags: [
-            tags.MISCELLANEOUS
+            tags.MOVE_IN
         ],
         src: './posts/2021/210619.js',
     },
     {   id: 210720, year: 2021, month: 7, day: 20,
         menuText: "Title Signing",
         tags: [
-            tags.MISCELLANEOUS, tags.MOVE_IN
+            tags.MOVE_IN
         ],
         src: './posts/2021/210720.js',
     },
     {   id: 210809, year: 2021, month: 8, day: 9,
         menuText: "The Keys",
         tags: [
-            tags.MISCELLANEOUS, tags.MOVE_IN
+            tags.MOVE_IN
         ],
         src: './posts/2021/210809.js',
     },
     {   id: 210813, year: 2021, month: 8, day: 13,
         menuText: "Left Behind",
         tags: [
-            tags.MISCELLANEOUS, tags.CLEAN_UP, tags.MOVE_IN
+            tags.CLEAN_UP, tags.MOVE_IN
         ],
         src: './posts/2021/210813.js',
     },
     {   id: 210814, year: 2021, month: 8, day: 14,
         menuText: "Utilities",
         tags: [
-            tags.MISCELLANEOUS, tags.MOVE_IN
+            tags.UTILITIES, tags.MOVE_IN
         ],
         src: './posts/2021/210814.js',
     },
@@ -371,7 +372,7 @@ const posts = [
     {   id: 210818, year: 2021, month: 8, day: 18,
         menuText: "New Lawnmower",
         tags: [
-            tags.MISCELLANEOUS, tags.YARD
+            tags.MOVE_IN, tags.YARD
         ],
         src: './posts/2021/210818.js',
     },
@@ -385,35 +386,35 @@ const posts = [
     {   id: 210912, year: 2021, month: 9, day: 12,
         menuText: "What Feels Like Home?",
         tags: [
-            tags.MISCELLANEOUS, tags.MOVE_IN
+            tags.MOVE_IN
         ],
         src: './posts/2021/210912.js',
     },
     {   id: 210925, year: 2021, month: 9, day: 25,
         menuText: "Test drive",
         tags: [
-            tags.MISCELLANEOUS, tags.MOVE_IN
+            tags.MOVE_IN
         ],
         src: './posts/2021/210925.js',
     },
     {   id: 211002, year: 2021, month: 10, day: 2,
         menuText: "Pellet Stove & Lawnmower",
         tags: [
-            tags.MISCELLANEOUS
+            tags.MOVE_IN
         ],
         src: './posts/2021/211002.js',
     },
     {   id: 211003, year: 2021, month: 10, day: 3,
         menuText: "Smoke 'em Out",
         tags: [
-            tags.MISCELLANEOUS, tags.CLEAN_UP
+            tags.CLEAN_UP
         ],
         src: './posts/2021/211003.js',
     },
     {   id: 211015, year: 2021, month: 10, day: 15,
         menuText: "First week",
         tags: [
-            tags.MISCELLANEOUS, tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS, tags.MOVE_IN
+            tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS, tags.MOVE_IN
         ],
         src: './posts/2021/211015.js',
     }
