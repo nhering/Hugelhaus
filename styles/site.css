@@ -241,6 +241,7 @@ label {
     grid-template-columns: 45px 1fr;
     gap: 4px;
     padding: 4px 0;
+    border-top: dotted 1px rgba(255,255,255,.2);
 }
 
 .menu-item:hover {
