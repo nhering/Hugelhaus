@@ -18,8 +18,6 @@ class Menu {
     }
 
     setLocalStorage(){
-        let s = localStorage.getItem('searchTerms')
-        if (!s) localStorage.setItem('searchTerms','')
         let t = localStorage.getItem('selectedTags')
         if (!t) localStorage.setItem('selectedTags',JSON.stringify([]))
         this.selectedTags = JSON.parse(t)
@@ -29,7 +27,6 @@ class Menu {
         let vs = localStorage.getItem('version')
         if (vs !== this.version) 
         {
-            localStorage.setItem('searchTerms','')
             localStorage.setItem('selectedTags',JSON.stringify([]))
             localStorage.setItem('vs',this.version)
         }
@@ -143,9 +140,7 @@ class Menu {
         let div = document.createElement('div')
         div.classList.add('menu-header')
         div.appendChild(this.getTagButton())
-        div.appendChild(this.getSearchButton())
         div.appendChild(this.getTagMultiSelect())
-        div.appendChild(this.getSearchInput())
         return div
     }
 
@@ -185,11 +180,21 @@ class Menu {
 
         let label = document.createElement('label')
         label.setAttribute('for',tag[0])
-        label.innerText = tag[1]
+        let count = this.getCountOfArticlesWithTag(tag[1])
+        label.innerText = `${tag[1]} (${count})`
 
         div.appendChild(input)
         div.appendChild(label)
         return div
+    }
+
+    getCountOfArticlesWithTag(tag)
+    {
+        let result = 0
+        posts.forEach((p) => {
+            if(p.tags.includes(tag)) result++
+        })
+        return result
     }
 
     handleTagSelect(ele,tag){
@@ -206,27 +211,6 @@ class Menu {
         // console.log(localStorage.getItem('selectedTags'))
         // console.log(this.selectedTags)
         this.searchTags()
-    }
-
-    getSearchButton(){
-        let div = document.createElement('div')
-        div.classList.add('button')
-        div.innerText = "SEARCH"
-        div.addEventListener('click',()=>{
-            this.showInput('search')
-        })
-        return div
-    }
-
-    getSearchInput(){
-        let div = document.createElement('input')
-        div.classList.add('hide')
-        div.setAttribute('id','searchinput')
-        div.placeholder = 'search'
-        div.addEventListener('input',()=>{
-            this.searchString(div.value)
-        })
-        return div
     }
 
     showInput(type){
@@ -250,44 +234,28 @@ class Menu {
                     this.shownInput = 'tags'
                 }
                 return
-            case 'search':
-                if (this.shownInput === 'search') {
-                    search.classList.add('hide')
-                    this.shownInput = null
-                } else if (this.shownInput === 'tags'){
-                    tags.classList.add('hide')
-                    search.value = localStorage.getItem('searchTerms')
-                    this.searchString(search.value)
-                    search.classList.remove('hide')
-                    search.focus()
-                    this.shownInput = 'search'
-                } else {
-                    search.value = localStorage.getItem('searchTerms')
-                    this.searchString(search.value)
-                    search.classList.remove('hide')
-                    search.focus()
-                    this.shownInput = 'search'
-                }
-                return
+            // case 'search':
+            //     if (this.shownInput === 'search') {
+            //         search.classList.add('hide')
+            //         this.shownInput = null
+            //     } else if (this.shownInput === 'tags'){
+            //         tags.classList.add('hide')
+            //         search.value = localStorage.getItem('searchTerms')
+            //         this.searchString(search.value)
+            //         search.classList.remove('hide')
+            //         search.focus()
+            //         this.shownInput = 'search'
+            //     } else {
+            //         search.value = localStorage.getItem('searchTerms')
+            //         this.searchString(search.value)
+            //         search.classList.remove('hide')
+            //         search.focus()
+            //         this.shownInput = 'search'
+            //     }
+            //     return
             default:
                 return
         }
-    }
-
-    searchString(terms){
-        localStorage.setItem('searchTerms',terms)
-
-        let result = []
-        if (terms === '') {
-            result = posts
-        } else {
-            posts.forEach((p) => {
-                if(p.menuText.toLowerCase().indexOf(terms.trim()) > -1) {
-                    result.push(p)
-                }
-            })
-        }
-        this.loadItems(result)
     }
 
     searchTags(){

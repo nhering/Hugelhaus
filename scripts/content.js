@@ -73,8 +73,8 @@ class Content {
         container.classList.add('container')
         container.innerHTML = html
         this.div.appendChild(container)
+        this.buildSlides()
         this.resize()
-        this.buildCarousels()
         this.addTags(container)
     }
 
@@ -98,8 +98,6 @@ class Content {
     }
 
     addTags(container){
-        console.log("addTags")
-        console.log(this.post)
         let ele = document.createElement('fieldset')
         ele.classList.add('tags')
         let legend = document.createElement('legend')
@@ -118,11 +116,7 @@ class Content {
     resize(){
         let container = document.querySelector('.container')
         let w = container.clientWidth - 4
-        document.querySelectorAll('.img-caption')
-            .forEach((e) => {
-                this.fitCaption(e,w)
-            })
-        document.querySelectorAll('.carousel')
+        document.querySelectorAll('.slides')
             .forEach((e) => {
                 this.fitCaption(e,w)
             })
@@ -133,39 +127,62 @@ class Content {
         caption.querySelector('img').style.width = `${width}px`
     }
 
-    buildCarousels(){
-        document.querySelectorAll('.carousel')
-        .forEach(c => {
-            new Carousel({
+    buildSlides(){
+        document.querySelectorAll('.slides')
+        .forEach(slide => {
+            new Slide({
                 root: this.root,
-                ele: c
+                ele: slide
             })
-        })
+        });
     }
 }
 
-class Carousel {
-    constructor(data = {}){
-        // elements
+class Slide {
+    constructor(data = {})
+    {
         this.ele = data.ele
-        this.img = this.ele.querySelector('img')
-        this.left = this.ele.querySelector('.left')
-        this.right = this.ele.querySelector('.right')
-        // other properties
+        this.left
+        this.right
+        this.img
+        this.caption
         this.sources = JSON.parse(this.ele.dataset.sources)
         this.basePath = `${window.location.href.split(data.root)[0]}${data.root}`
-        this.localPath = this.img.src.split(this.basePath)[1]
-        this.currentIndex = this.sources.indexOf(this.localPath)
-        
+        this.localPath = this.sources[0][0]
+        this.currentIndex = 0
+        this.buildPresentationElements()
+        this.changeSource()
+    }
+
+    buildPresentationElements()
+    {
+        if (this.sources.length > 1)
+        {
+            this.buildLeftNav()
+            this.buildRightNav()
+        }
+
+        this.img = document.createElement('img')
+        this.ele.appendChild(this.img)
+
+        this.caption = document.createElement('div')
+        this.caption.classList.add('caption')
+        this.ele.appendChild(this.caption)
+    }
+
+    buildLeftNav()
+    {
+        this.left = document.createElement('div')
+        this.left.classList.add('left')
+        this.left.innerText = "<"
         this.left.addEventListener('click',()=>{
             this.previous()
         })
-        this.right.addEventListener('click',()=>{
-            this.next()
-        })
+        this.ele.appendChild(this.left)
     }
-
-    previous(){
+    
+    previous()
+    {
         if (this.currentIndex > 0){
             this.currentIndex--
         } else {
@@ -174,7 +191,19 @@ class Carousel {
         this.changeSource()
     }
 
-    next(){
+    buildRightNav()
+    {
+        this.right = document.createElement('div')
+        this.right.classList.add('right')
+        this.right.innerText = ">"
+        this.right.addEventListener('click',()=>{
+            this.next()
+        })
+        this.ele.appendChild(this.right)
+    }
+
+    next()
+    {
         if (this.currentIndex < this.sources.length - 1){
             this.currentIndex++
         } else {
@@ -183,9 +212,9 @@ class Carousel {
         this.changeSource()
     }
 
-    changeSource(){
-        this.localPath = this.sources[this.currentIndex]
-        let src = `${this.basePath}${this.localPath}`
-        this.img.src = src
+    changeSource()
+    {
+        this.img.src = `${this.basePath}${this.sources[this.currentIndex][0]}`
+        this.caption.innerText = this.sources[this.currentIndex][1]
     }
 }

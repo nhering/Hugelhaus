@@ -1,3 +1,8 @@
+let slides_211008 = JSON.stringify([
+    ['/images/2021/11/20211126_093851.jpg','This takes up nearly half of the garage. \
+    Hopefully that will be more than enough to get me through the winter.']
+])
+
 content.innerHTML = `\
     <h1>Pellet Deleviery</h1>\
     <h5>Monday October 08 2021</h5>\
@@ -14,9 +19,5 @@ content.innerHTML = `\
     and a portable fork-lift. They a pallet off the truck and were able to just barely \
     set it inside the garage. Then they used the jack to position it.</p> \
     <br>\
-    <div class='img-caption'>\
-        <img src='./images/2021/11/20211126_093851.jpg'/ >\
-        <div class='caption'>This takes up nearly half of the garage. \
-        Hopefully that will be more than enough to get me through the winter.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_211008}'></div>\
 `

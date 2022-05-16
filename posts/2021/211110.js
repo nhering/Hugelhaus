@@ -1,15 +1,14 @@
-// NOTE: Do not add the dot to the begining of the source paths
-let carousel211110 = JSON.stringify([
-    '/images/2021/10/20211110_065040.jpg',
-    '/images/2021/11/20211114_165411.jpg',
-    '/images/2021/11/20211110_200157.jpg',
-    '/images/2021/11/20211110_200454.jpg',
-    '/images/2021/11/20211119_194137.jpg'
+let slides_211110 = JSON.stringify([
+    ['/images/2021/10/20211110_065040.jpg',''],
+    ['/images/2021/11/20211114_165411.jpg',''],
+    ['/images/2021/11/20211110_200157.jpg',''],
+    ['/images/2021/11/20211110_200454.jpg',''],
+    ['/images/2021/11/20211119_194137.jpg','']
 ])
 
 content.innerHTML = `\
     <h1>Scenic Moments</h1>\
-    <h5>Wednesday Novemper 10 2021</h5>\
+    <h5>Wednesday November 10 2021</h5>\
     <br>\
     <p>A few images from around the house.</p>\
     <br>\
@@ -19,12 +18,5 @@ content.innerHTML = `\
     is just a speaker from HomeDepot connected via bluetooth to my old laptop. A \
     cloudy evening obscuring the moon looking out over the deck.</p>\
     <br>\
-    <div class='carousel' data-sources='${carousel211110}'>\
-        <div class='controls'>\
-            <div class='left'></div>\
-            <div class='right'></div>\
-        </div>\
-        <img src='./images/2021/10/20211110_065040.jpg'/ >\
-        <div class='caption'>Some images to remember.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_211110}'></div>\
 `

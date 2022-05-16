@@ -1,7 +1,9 @@
-let carousel211003 = JSON.stringify([
-    '/images/2021/10/20211003_111640.jpg',
-    '/images/2021/10/20211003_112747.jpg'
+let slides_211003 = JSON.stringify([
+    ['/images/2021/10/20211003_111640.jpg','The first time I&apos;ve had a fire in the burn pile.'],
+    ['/images/2021/10/20211003_112747.jpg','The first time I&apos;ve had a fire in the burn pile.']
 ])
+
+console.log(slides_211003)
 
 content.innerHTML = `\
     <h1>Smoke 'em Out</h1>\
@@ -20,14 +22,7 @@ content.innerHTML = `\
     on top of the fire. This helped channel the air toward the fire and actually helped \
     focus the heat on the wet pallet.</p>\
     <br>\
-    <div class='carousel' data-sources='${carousel211003}'>\
-        <div class='controls'>\
-            <div class='left'></div>\
-            <div class='right'></div>\
-        </div>\
-        <img src='./images/2021/10/20211003_111640.jpg'/ >\
-        <div class='caption'>The first time I've had a fire in the burn pile.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_211003}'></div>\
     <br>\
     <p>Unfortunately, despite the smoke and the heat, the wasps were still buzzing around. \
     Fortunately, they didn't notice or attack me. That actually happened a couple weeks ago \

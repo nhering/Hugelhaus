@@ -1,8 +1,8 @@
-let carousel211111 = JSON.stringify([
-    '/images/2021/08/20210816_155316.jpg',
-    '/images/2021/11/20211111_125506.jpg',
-    '/images/2021/11/20211111_125515.jpg',
-    '/images/2021/11/20211111_142350.jpg'
+let slides_211111 = JSON.stringify([
+    ['/images/2021/08/20210816_155316.jpg','Before the install.'],
+    ['/images/2021/11/20211111_125506.jpg','During installation.'],
+    ['/images/2021/11/20211111_125515.jpg','During installation.'],
+    ['/images/2021/11/20211111_142350.jpg','After the install.']
 ])
 
 content.innerHTML = `\
@@ -18,12 +18,5 @@ content.innerHTML = `\
     do this gave me the impression that I may be able to do some of the other work on the \
     plumbing myself. It didn't seem like a very difficult process.</p>\
     <br>\
-    <div class='carousel' data-sources='${carousel211111}'>\
-        <div class='controls'>\
-            <div class='left'></div>\
-            <div class='right'></div>\
-        </div>\
-        <img src='./images/2021/08/20210816_155316.jpg'/ >\
-        <div class='caption'>Before, during, and after the install.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_211111}'></div>\
 `

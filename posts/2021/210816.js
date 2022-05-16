@@ -1,4 +1,10 @@
-content.innerHTML = "\
+let slides_210816 = JSON.stringify([
+    ['/images/2021/08/20210816_155316.jpg','Laden with sediment, the two original tanks lay uselessly to the right \
+    while the new tank takes their place. Maybe the new tank will get an improved water treatment \
+    system to go with it.']
+])
+
+content.innerHTML = `\
     <h1>Water Pressure</h1>\
     <h5>Monday August 16 2021</h5>\
     <br>\
@@ -19,10 +25,5 @@ content.innerHTML = "\
     from filling up with sediment. I may change the system so that the water routes \
     through the filter prior to the tank in the future.</p>\
     <br>\
-    <div class='img-caption'>\
-        <img src='./images/2021/08/20210816_155316.jpg'/ >\
-        <div class='caption'>Laden with sediment, the two original tanks lay uselessly to the right \
-        while the new tank takes their place. Maybe the new tank will get an improved water treatment \
-        system to go with it.</div>\
-    </div>\
-"
+    <div class='slides' data-sources='${slides_210816}'></div>
+`

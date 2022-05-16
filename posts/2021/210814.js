@@ -1,4 +1,8 @@
-content.innerHTML = "\
+let slides_210814 = JSON.stringify([
+    ['/images/2021/08/20210814_starlink.jpg','Starlink service is a whole other story for later.']
+])
+
+content.innerHTML = `\
     <h1>Utilities</h1>\
     <h5>Saturday August 14 2021</h5>\
     <br>\
@@ -18,10 +22,7 @@ content.innerHTML = "\
     <br>\
     <p>I preordered Starlink a few weeks earlier but...</p>\
     <br>\
-    <div class='img-caption'>\
-        <img src='./images/2021/08/20210814_starlink.jpg'/ >\
-        <div class='caption'>Starlink service is a whole other story for later.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_210814}'></div>\
     <br>\
     <p>I expected there to be service via land line phone wires that would be at least \
     enough to cover till Starlink service opened up. Starlink would be more than enough to \
@@ -74,4 +75,4 @@ content.innerHTML = "\
     <br>\
     <p>I'm preparing for a pretty serious adjustment in lifestyle if I can't get servicable internet.\
     </p>\
-"
+`

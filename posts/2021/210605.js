@@ -1,21 +1,21 @@
-let carousel210605 = JSON.stringify([
-    '/images/2021/04/20210401_153001.jpg',
-    '/images/2021/04/20210401_153002.jpg',
-    '/images/2021/04/20210401_153003.jpg',
-    '/images/2021/04/20210401_153004.jpg',
-    '/images/2021/04/20210401_153005.jpg',
-    '/images/2021/04/20210401_153006.jpg',
-    '/images/2021/04/20210401_153007.jpg',
-    '/images/2021/04/20210401_153008.jpg',
-    '/images/2021/04/20210401_153009.jpg',
-    '/images/2021/04/20210401_153010.jpg',
-    '/images/2021/04/20210401_153011.jpg',
-    '/images/2021/04/20210401_153012.jpg',
-    '/images/2021/04/20210401_153013.jpg',
-    '/images/2021/04/20210401_153014.jpg',
-    '/images/2021/04/20210401_153015.jpg',
-    '/images/2021/04/20210401_153016.jpg',
-    '/images/2021/04/20210401_153018.jpg',
+let slides_210605 = JSON.stringify([
+    ['/images/2021/04/20210401_153001.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153002.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153003.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153004.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153005.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153006.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153007.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153008.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153009.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153010.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153011.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153012.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153013.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153014.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153015.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153016.jpg',"Images from the seller&apos;s realtor."],
+    ['/images/2021/04/20210401_153018.jpg',"Images from the seller&apos;s realtor."]
 ])
 
 content.innerHTML = `\
@@ -30,14 +30,7 @@ content.innerHTML = `\
     a few minutes prior. They were still there too but were in their car and heading out \
     in order to give us time to tour the property.</p>\
     <br>\
-    <div class='carousel' data-sources='${carousel210605}'>\
-        <div class='controls'>\
-            <div class='left'></div>\
-            <div class='right'></div>\
-        </div>\
-        <img src='./images/2021/04/20210401_153001.jpg'/ >\
-        <div class='caption'>Images from the seller's realtor.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_210605}'></div>\
     <br>\
     <p>Before we enter the house I note the quite of the road and the late-morning shade from \
     the trees in the front yard. The driveway is concrete with large cracks and \

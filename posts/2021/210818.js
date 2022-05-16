@@ -1,4 +1,8 @@
-content.innerHTML = "\
+let slides_210818 = JSON.stringify([
+    ['/images/2021/08/20210818_cubcadet.jpg','It has a hydrostatic transmission. I&apos;m looking forward to that experience.']
+])
+
+content.innerHTML = `\
     <h1>New Lawnmower</h1>\
     <h5>Monday August 16 2021</h5>\
     <br>\
@@ -15,10 +19,7 @@ content.innerHTML = "\
     me the option to get a wider deck. Since I need something that'll handle that size lawn I got \
     something with a 54\" deck.</p>\
     <br>\
-    <div class='img-caption'>\
-        <img src='./images/2021/08/20210818_cubcadet.jpg'/ >\
-        <div class='caption'>It has a hydrostatic transmission. I'm looking forward to that experience.</div>\
-    </div>\
+    <div class='slides' data-sources='${slides_210818}'></div>\
     <br>\
     <p>I ordered it online and got a call to coordinate the shipping a couple \
     days later. They said they'd have it to me on Monday and would call 30 minutes in advance of \
@@ -57,4 +58,4 @@ content.innerHTML = "\
     <p>It would be a few weeks before I actually fired it up for the first time. But I was looking forward to \
     mowing the lawn for the first time in my life. This looked like a really comfortable ride and it would be \
     exciting to know that I was mowing MY lawn, not my parents or my roomates and mine, but MY lawn.</p>\
-"
+`
