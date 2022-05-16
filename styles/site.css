@@ -67,6 +67,18 @@ p {
     max-width: 1000px;
     line-height: 1.5em;
 }
+.button {
+    background-color: rgba(255,255,255,.1);
+    border: solid 1px #222;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: rgba(255,255,255,.2);
+}
 
 /* #region Menu */
 
@@ -106,15 +118,6 @@ p {
     margin-bottom: 6px;
     text-align: center;
 }
-
-/* #searchinput {
-    width: 195px;
-    grid-column: 1 / span 2;
-    color: black;
-    padding: 6px;
-    font-size: 20px;
-    border-radius: 10px;
-} */
 
 #taginput {
     width: 185px;
