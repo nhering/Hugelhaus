@@ -2,10 +2,16 @@ class Menu {
     constructor(){
         this.version = '2021-11-26'
         this.left = -240
-        this.selectedTags = []
-        this.setLocalStorage()
-        this.refreshIfNeeded()
-        this.shownInput = null
+        this.state = {
+            expandedYear: '',
+            expandedYearScrollTop: 0,
+            selectedPost: '',
+            selectedTags: [],
+            tagsExpanded: false,
+            taginputScrollTop: 0
+        }
+        this.syncLocalStorage()
+        console.log(this.state)
 
         this.menuDiv = document.getElementById("menu")
         this.menuDiv.appendChild(this.getHeader())
@@ -17,18 +23,21 @@ class Menu {
         })
     }
 
-    setLocalStorage(){
-        let t = localStorage.getItem('selectedTags')
-        if (!t) localStorage.setItem('selectedTags',JSON.stringify([]))
-        this.selectedTags = JSON.parse(t)
-    }
-
-    refreshIfNeeded(){
-        let vs = localStorage.getItem('version')
-        if (vs !== this.version) 
+    syncLocalStorage(push = false){
+        if (push)
         {
-            localStorage.setItem('selectedTags',JSON.stringify([]))
-            localStorage.setItem('vs',this.version)
+            localStorage.setItem('menuState',JSON.stringify(this.state))
+            console.log(this.state)
+        } else {
+            let ms = localStorage.getItem('menuState')
+            if (ms == [])
+            {
+                localStorage.setItem('menuState',JSON.stringify(this.state))
+            }
+            else
+            {
+                this.state = JSON.parse(ms)
+            }
         }
     }
 
@@ -49,23 +58,29 @@ class Menu {
             menuYearHeader.classList.add('menu-year-header')
             menuYearHeader.innerText = g.year
             menuYearHeader.addEventListener('click',()=>{
-                let ele = document.getElementById(g.year)
-                ele.classList.toggle('hide')
+                this.accordionSelect(g.year)
             })
 
             let menuYearItems = document.createElement('div')
             menuYearItems.classList.add('menu-year-items')
-            menuYearItems.classList.add('hide')
+            menuYearItems.addEventListener('scroll',()=>{
+                this.state.expandedYearScrollTop = menuYearItems.scrollTop
+                this.syncLocalStorage(true)
+            })
+            if (this.state.expandedYear != g.year) menuYearItems.classList.add('hide')
             menuYearItems.id = g.year
             g.posts.forEach((p)=>{
                 let li = document.createElement('div')
+                li.id = p.id
                 li.classList.add('menu-item')
+                if (this.state.selectedPost == p.id) li.classList.add('selected')
                 let m = Number.MMM(p.month)
                 let d = `${p.day}`.padStart(2,'0')
                 li.innerHTML = `<div class='date'>${m}-${d}</div><div class='text'>${p.menuText}</div>`
                 li.addEventListener('click',() => {
+                    this.state.selectedPost = p.id
+                    this.syncLocalStorage(true)
                     content.route(p.id)
-                    this.toggleMenu()
                 })
                 menuYearItems.appendChild(li)
             })
@@ -78,17 +93,13 @@ class Menu {
     }
 
     groupPosts(posts){
-        // console.log('groupPosts')
         posts.sort(this.sortPosts)
         let groups = []
         let years = []
         posts.forEach((p)=>{
-            // console.log(p.year)
             if(years.indexOf(p.year) < 0) years.push(p.year)
         })
-        // console.log(years)
         years.sort()
-        // console.log('groupPosts')
 
         years.forEach((y) => {
             let group  = {
@@ -125,21 +136,37 @@ class Menu {
         }
     }
 
-    hideMenu(){
-        this.menuDiv.style.left = -240
-        this.left = -240
+    accordionSelect(year)
+    {
+        let years = document.querySelectorAll('.menu-year-items')
+        this.state.expandedYearScrollTop = 0
+        this.syncLocalStorage(true)
+        years.forEach((y) => {
+            if(y.id == year) 
+            {
+                y.classList.toggle('hide')
+            } else {
+                if(!y.classList.contains('hide')) y.classList.add('hide')
+            }
+        })
+        this.state.expandedYear = year
+        this.syncLocalStorage(true)
     }
 
     toggleMenu(){
         let x = this.left < 0 ? 0 : -240
         this.menuDiv.style.left = x
         this.left = x
+        this.searchTags()
+        document.getElementById('taginput').scroll(0,this.state.taginputScrollTop)
+        document.getElementById(this.state.expandedYear).scroll(0,this.state.expandedYearScrollTop)
     }
 
     getHeader(){
         let div = document.createElement('div')
         div.classList.add('menu-header')
         div.appendChild(this.getTagButton())
+        div.appendChild(this.getTagCount())
         div.appendChild(this.getTagMultiSelect())
         return div
     }
@@ -149,17 +176,35 @@ class Menu {
         div.classList.add('button')
         div.innerText = "TAGS"
         div.addEventListener('click',()=>{
-            this.showInput('tags')
+            let tags = document.getElementById('taginput')
+            tags.classList.toggle('hide')
+            this.state.tagsExpanded = !this.state.tagsExpanded
+            this.syncLocalStorage(true)
         })
+        return div
+    }
+
+    getTagCount()
+    {
+        let div = document.createElement('div')
+        div.id = 'tagCount'
+        let num = this.state.selectedTags.length
+        div.innerText = num === 0 ? 'viewing all' : `${num} selected`
         return div
     }
 
     getTagMultiSelect(){
         let div = document.createElement('div')
-        div.classList.add('hide')
-        div.setAttribute('id','taginput')
+        div.id = 'taginput'
         Object.entries(tags).forEach((t) => {
             div.appendChild(this.getTagCheckbox(t))
+        })
+
+        if (!this.state.tagsExpanded) div.classList.add('hide')
+        
+        div.addEventListener('scroll',()=>{
+            this.state.taginputScrollTop = div.scrollTop
+            this.syncLocalStorage(true)
         })
         return div
     }
@@ -172,10 +217,10 @@ class Menu {
         input.setAttribute('type','checkbox')
         input.setAttribute('id',tag[0])
         input.setAttribute('name',tag[1])
-        let i = this.selectedTags.indexOf(tag[1])
+        let i = this.state.selectedTags.indexOf(tag[1])
         if (i > -1) input.checked = true
         input.addEventListener('click',()=>{
-            this.handleTagSelect(input,tag)
+            this.handleTagSelect()
         })
 
         let label = document.createElement('label')
@@ -188,6 +233,13 @@ class Menu {
         return div
     }
 
+    updateTagCount()
+    {
+        let tagCount = document.getElementById('tagCount')
+        let num = this.state.selectedTags.length
+        tagCount.innerText = num === 0 ? 'viewing all' : `${num} selected`
+    }
+
     getCountOfArticlesWithTag(tag)
     {
         let result = 0
@@ -197,75 +249,26 @@ class Menu {
         return result
     }
 
-    handleTagSelect(ele,tag){
-        this.selectedTags = JSON.parse(localStorage.getItem('selectedTags'))
-
-        let ind = this.selectedTags.indexOf(tag[1])
-        let del = ind > -1 ? 1 : 0
-        this.selectedTags.splice(ind,del)
-        if (ele.checked) {
-            this.selectedTags.push(tag[1])
-        }
-
-        localStorage.setItem('selectedTags',JSON.stringify(this.selectedTags))
-        // console.log(localStorage.getItem('selectedTags'))
-        // console.log(this.selectedTags)
+    handleTagSelect(){
+        this.state.selectedTags = []
+        let selectList = document.getElementById('taginput')
+        selectList.childNodes.forEach((tagItem) => {
+            let input = tagItem.firstChild
+            if(input.checked) this.state.selectedTags.push(input.name)
+        })
+        this.updateTagCount()
+        this.syncLocalStorage(true)
         this.searchTags()
-    }
-
-    showInput(type){
-        let tags = document.getElementById('taginput')
-        let search = document.getElementById('searchinput')
-        switch (type){
-            case 'tags':
-                if (this.shownInput === 'tags') {
-                    tags.classList.add('hide')
-                    this.shownInput = null
-                } else if (this.shownInput === 'search'){
-                    search.classList.add('hide')
-                    this.searchTags()
-                    tags.classList.remove('hide')
-                    tags.focus()
-                    this.shownInput = 'tags'
-                } else {
-                    this.searchTags()
-                    tags.classList.remove('hide')
-                    tags.focus()
-                    this.shownInput = 'tags'
-                }
-                return
-            // case 'search':
-            //     if (this.shownInput === 'search') {
-            //         search.classList.add('hide')
-            //         this.shownInput = null
-            //     } else if (this.shownInput === 'tags'){
-            //         tags.classList.add('hide')
-            //         search.value = localStorage.getItem('searchTerms')
-            //         this.searchString(search.value)
-            //         search.classList.remove('hide')
-            //         search.focus()
-            //         this.shownInput = 'search'
-            //     } else {
-            //         search.value = localStorage.getItem('searchTerms')
-            //         this.searchString(search.value)
-            //         search.classList.remove('hide')
-            //         search.focus()
-            //         this.shownInput = 'search'
-            //     }
-            //     return
-            default:
-                return
-        }
     }
 
     searchTags(){
         let result = []
-        if (this.selectedTags.length === 0) {
+        if (this.state.selectedTags.length === 0) {
             result = posts
         } else {
             posts.forEach((p) => {
                 let addThisPost = false
-                this.selectedTags.forEach((t) => {
+                this.state.selectedTags.forEach((t) => {
                     let ind = p.tags.indexOf(t)
                     if(ind > -1){
                         addThisPost = true
@@ -277,174 +280,3 @@ class Menu {
         this.loadItems(result)
     }
 }
-
-const tags = {
-    ATTIC: "Attic",
-    BASEMENT: "Basement",
-    BATHROOM: "Bathroom",
-    BEDROOM: "Bedroom",
-    CLEAN_UP: "Clean up",
-    ELECTRIC: "Electrical",
-    FRIENDS_FAMILY: 'Friends & Family',
-    FOYER: "Foyer",
-    GARAGE: "Garage",
-    IMPROVEMENTS: "Improvements",
-    KITCHEN: "Kitchen",
-    LITTLE_MOMENTS: "Little Moments",
-    LIVINGROOM: "Livingroom",
-    MOVE_IN: "Move In",
-    PLUMBING: "Plumbing",
-    REPAIRS: "Repairs",
-    UTILITIES: "Utilities",
-    YARD: 'Yard',
-}
-
-const posts = [
-    {   id: 210605, year: 2021, month: 6, day: 5,
-        menuText: "First Impressions",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210605.js',
-    },
-    {   id: 210619, year: 2021, month: 6, day: 19,
-        menuText: "Home Inspection",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210619.js',
-    },
-    {   id: 210720, year: 2021, month: 7, day: 20,
-        menuText: "Title Signing",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210720.js',
-    },
-    {   id: 210809, year: 2021, month: 8, day: 9,
-        menuText: "The Keys",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210809.js',
-    },
-    {   id: 210813, year: 2021, month: 8, day: 13,
-        menuText: "Left Behind",
-        tags: [
-            tags.CLEAN_UP, tags.MOVE_IN
-        ],
-        src: './posts/2021/210813.js',
-    },
-    {   id: 210814, year: 2021, month: 8, day: 14,
-        menuText: "Utilities",
-        tags: [
-            tags.UTILITIES, tags.MOVE_IN
-        ],
-        src: './posts/2021/210814.js',
-    },
-    {   id: 210816, year: 2021, month: 8, day: 16,
-        menuText: "Water Pressure",
-        tags: [
-            tags.BASEMENT, tags.PLUMBING, tags.REPAIRS
-        ],
-        src: './posts/2021/210816.js',
-    },
-    {   id: 210818, year: 2021, month: 8, day: 18,
-        menuText: "New Lawnmower",
-        tags: [
-            tags.MOVE_IN, tags.YARD
-        ],
-        src: './posts/2021/210818.js',
-    },
-    {   id: 210906, year: 2021, month: 9, day: 6,
-        menuText: "House Warming",
-        tags: [
-            tags.FRIENDS_FAMILY, tags.MOVE_IN
-        ],
-        src: './posts/2021/210906.js',
-    },
-    {   id: 210912, year: 2021, month: 9, day: 12,
-        menuText: "What Feels Like Home?",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210912.js',
-    },
-    {   id: 210925, year: 2021, month: 9, day: 25,
-        menuText: "Test Drive",
-        tags: [
-            tags.MOVE_IN
-        ],
-        src: './posts/2021/210925.js',
-    },
-    {   id: 211002, year: 2021, month: 10, day: 2,
-        menuText: "Pellet Stove & Lawnmower",
-        tags: [
-            tags.MOVE_IN, tags.UTILITIES
-        ],
-        src: './posts/2021/211002.js',
-    },
-    {   id: 211003, year: 2021, month: 10, day: 3,
-        menuText: "Smoke 'em Out",
-        tags: [
-            tags.CLEAN_UP
-        ],
-        src: './posts/2021/211003.js',
-    },
-    {   id: 211008, year: 2021, month: 10, day: 8,
-        menuText: "Pellet Deleviery",
-        tags: [
-            tags.UTILITIES, tags.GARAGE
-        ],
-        src: './posts/2021/211008.js',
-    },
-    {   id: 211015, year: 2021, month: 10, day: 15,
-        menuText: "First Week",
-        tags: [
-            tags.CLEAN_UP, tags.YARD, tags.IMPROVEMENTS, tags.MOVE_IN
-        ],
-        src: './posts/2021/211015.js',
-    },
-    {   id: 211110, year: 2021, month: 11, day: 10,
-        menuText: "Scenic Moments",
-        tags: [
-            tags.LITTLE_MOMENTS
-        ],
-        src: './posts/2021/211110.js',
-    },
-    {   id: 211111, year: 2021, month: 11, day: 11,
-        menuText: "Water Treatment Install",
-        tags: [
-            tags.PLUMBING, tags.UTILITIES, tags.IMPROVEMENTS, tags.BASEMENT
-        ],
-        src: './posts/2021/211111.js',
-    },
-    {   id: 211116, year: 2021, month: 11, day: 16,
-        menuText: "Winterizing",
-        tags: [
-            tags.BATHROOM, tags.BEDROOM, tags.LIVINGROOM, tags.UTILITIES
-        ],
-        src: './posts/2021/211116.js',
-    },
-    {   id: 211117, year: 2021, month: 11, day: 17,
-        menuText: "Another Burn",
-        tags: [
-            tags.CLEAN_UP, tags.MOVE_IN
-        ],
-        src: './posts/2021/211117.js',
-    },
-    {   id: 211122, year: 2021, month: 11, day: 22,
-        menuText: "Recycle Metal Items Left Behind",
-        tags: [
-            tags.CLEAN_UP, tags.MOVE_IN
-        ],
-        src: './posts/2021/211122.js',
-    },
-    // {   id: 211123, year: 2021, month: 11, day: 23,
-    //     menuText: "Generator",
-    //     tags: [
-    //         tags.UTILITIES
-    //     ],
-    //     src: './posts/2021/211123.js',
-    // }
-]

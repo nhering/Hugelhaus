@@ -67,6 +67,7 @@ p {
     max-width: 1000px;
     line-height: 1.5em;
 }
+
 .button {
     background-color: rgba(255,255,255,.1);
     border: solid 1px #222;
@@ -119,6 +120,15 @@ p {
     text-align: center;
 }
 
+#tagCount {
+    grid-row: 1;
+    grid-column: 2;
+    text-align: left;
+    padding-top: 6px;
+    color: #AAA;
+    font-size: 12px;
+}
+
 #taginput {
     width: 185px;
     background-color: #EEE;
@@ -169,6 +179,8 @@ label {
 
 .menu-year-items {
     margin: 6px 0;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .menu-item {
@@ -192,6 +204,10 @@ label {
     text-align: right;
 }
 
+.selected {
+    background-color: rgba(255, 251, 0, 0.1);
+}
+
 /* #endregion */
 
 .container {
@@ -199,6 +215,33 @@ label {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        min-width: 1000px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 800px) {
+    .container {
+        min-width: 600px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 799px) and (min-width: 500px) {
+    .container {
+        min-width: 400px;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 399px) {
+    .container {
+        min-width: 200px;
+        max-width: 200px;
+    }
 }
 
 /* #region Slides */
@@ -212,6 +255,7 @@ label {
 }
 
 .slides .left, .slides .right {
+    user-select: none;
     color: #95ccff;
     font-size: 2.6em;
     height: 1em;
