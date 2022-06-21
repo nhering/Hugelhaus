@@ -11,7 +11,6 @@ class Menu {
             taginputScrollTop: 0
         }
         this.syncLocalStorage()
-        console.log(this.state)
 
         this.menuDiv = document.getElementById("menu")
         this.menuDiv.appendChild(this.getHeader())
@@ -24,13 +23,13 @@ class Menu {
     }
 
     syncLocalStorage(push = false){
+        console.log('syncLocalStorage')
         if (push)
         {
             localStorage.setItem('menuState',JSON.stringify(this.state))
-            console.log(this.state)
         } else {
             let ms = localStorage.getItem('menuState')
-            if (ms == [])
+            if (!ms)
             {
                 localStorage.setItem('menuState',JSON.stringify(this.state))
             }
