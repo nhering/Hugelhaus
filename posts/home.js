@@ -1,4 +1,4 @@
-content.innerHTML = "<div style='max-width:400px;text-align:center;'>\
+content.innerHTML = "<div style='max-width:400px;text-align:center;margin:auto;'>\
     <br>\
     <br>\
     <p style='letter-spacing:4px;line-height:2.4;color:#666;'>House on a hill</p>\
