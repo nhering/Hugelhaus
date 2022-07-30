@@ -12,9 +12,9 @@ let slides_220401a = JSON.stringify([
 
 let slides_220401b = JSON.stringify([
     ['/images/2021/08/20210821_114022.jpg','August 2021'],
-    ['/images/2021/08/20210821_114022.jpg','June 2022'],
+    ['/images/2022/06/20220629_183145.jpg','June 2022'],
     ['/images/2021/11/20211117_165908.jpg','November 2021'],
-    ['/images/2021/11/20211117_165908.jpg','June 2022']
+    ['/images/2022/06/20220628_190706.jpg','June 2022']
 ])
 
 content.innerHTML = `\
