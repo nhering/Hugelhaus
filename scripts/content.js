@@ -265,7 +265,7 @@ class Slide {
         this.img
         this.caption
         this.sources = JSON.parse(this.ele.dataset.sources)
-        this.basePath = `${window.location.href.split(data.root)[0]}${data.root}`
+        // this.basePath = `${window.location.href.split(data.root)[0]}${data.root}`
         this.localPath = this.sources[0][0]
         this.currentIndex = 0
         this.buildPresentationElements()
