@@ -231,12 +231,6 @@ class Content {
         return `${l[0]} ${l[1]} ${l[2]} ${l[3]} ${t[0]}:${t[1]}`
     }
 
-    month(num)
-    {
-        let m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-        return m[num - 1]
-    }
-
     resize(){
         let container = document.querySelector('.container')
         let w = container.clientWidth - 4
@@ -338,7 +332,7 @@ class Slide {
 
     changeSource()
     {
-        this.img.src = `${this.basePath}${this.sources[this.currentIndex][0]}`
+        this.img.src = `http://www.hugelhaus.com${this.sources[this.currentIndex][0]}`
         this.caption.innerText = this.sources[this.currentIndex][1]
     }
 }
