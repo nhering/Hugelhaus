@@ -69,13 +69,12 @@ class Content {
     }
 
     set innerHTML(html){
-        let container = document.createElement('div')
-        container.classList.add('container')
-        container.innerHTML = html
+        let container = new Ele('div').AddClass('container').InnerHTML(html).Element
         this.div.appendChild(container)
         this.buildSlides()
         this.resize()
-        this.addTags(container)
+        this.addTagsSection(container)
+        this.addCommentsSection(container)
     }
 
     set src(src){
@@ -97,20 +96,145 @@ class Content {
         document.querySelector('head').appendChild(ele)
     }
 
-    addTags(container){
-        let ele = document.createElement('fieldset')
-        ele.classList.add('tags')
-        let legend = document.createElement('legend')
-        legend.classList.add('legend')
-        legend.innerText = 'TAGS'
-        ele.appendChild(legend)
+    addTagsSection(container){
+        let ele = new Ele('fieldset').AddClass('tags')
+        ele.AppendChild(new Ele('legend').AddClass('legend').InnerText('TAGS').Element)
         this.post.tags.forEach((t) => {
-            let tag = document.createElement('div')
-            tag.classList.add('tag')
-            tag.innerText = t
-            ele.appendChild(tag)
+            ele.AppendChild(new Ele('div').AddClass('tag').InnerText(t).Element)
         })
-        container.appendChild(ele)
+        container.appendChild(ele.Element)
+    }
+
+    addCommentsSection(container)
+    {
+        let ele = new Ele('fieldset').AddClass('comments')
+        ele.AppendChild(new Ele('legend').AddClass('legend').InnerText('COMMENTS').Element)
+        ele.AppendChild(this.commentInput)
+        ele.AppendChild(this.commentSaveButton)
+        ele.AppendChild(this.commentsDiv)
+        container.appendChild(ele.Element)
+        this.loadComments()
+    }
+
+    get commentInput()
+    {
+        let result = new Ele('textarea').Id('newComment').AddClass('comment')
+        if (funtilityApi.userIsSignedIn)
+        {
+            result
+                .Placeholder('Care to comment?')
+        } else {
+            funtilityApi.signOut
+            result
+                .Placeholder('You must be signed in to comment.')
+                .Disable()
+        }
+        return result.Element
+    }
+
+    get commentSaveButton()
+    {
+        if (funtilityApi.userIsSignedIn)
+        {
+            return new Ele('button')
+                .AddClass('save-comment')
+                .InnerText('Save Comment')
+                .Event_Click(() => { 
+                    this.saveComment()
+                })
+                .Element
+        } else {
+            return new Ele('div').Element
+        }
+    }
+
+    saveComment()
+    {
+        let body = this.saveCommentBody()
+        if (body !== {})
+        {
+            let commentsDiv = document.getElementById('comments')
+            funtilityApi
+                .POST('Hugelhaus/Comment',body)
+                .then((res) => {
+                    commentsDiv.prepend(this.comment(res.result))
+                })
+        }
+    }
+
+    saveCommentBody()
+    {
+        let commentEle = document.getElementById('newComment')
+        if(!this.post || !this.post.id || !commentEle.value) {
+            return {}
+        } else {
+            let result = {
+                'Id': 0,
+                'UserPublicId': '',
+                'PostId': `${this.post.id}`,
+                'TimeStamp': '',
+                'Content': commentEle.value
+            }
+            commentEle.value = ''
+            return result 
+        }
+    }
+
+    get commentsDiv()
+    {
+        return new Ele('div')
+            .Id('comments')
+            .Element
+    }
+
+    loadComments()
+    {
+        let commentsDiv = document.getElementById('comments')
+        funtilityApi
+            .GET('Hugelhaus/Comments',[['postId',this.post.id]])
+            .then((res) => {
+                res.result.sort(this.compareComment)
+                res.result.forEach((comment) => {
+                    console.log(comment)
+                    commentsDiv.appendChild(this.comment(comment))
+                })
+            })
+    }
+
+    compareComment(a,b)
+    {
+        if(a.commentId < b.commentId) return 1
+        if(a.commentId > b.commentId) return -1
+        return 0
+    }
+
+    comment(comment)
+    {
+        let container = new Ele('div').AddClass('comment').Id(comment.commentId)
+        let name = new Ele('div').AddClass('name').InnerText(comment.userName).Element
+        container.AppendChild(name)
+        let time = new Ele('div').AddClass('time').InnerText(this.parseTimeStamp(comment.timeStamp)).Element
+        container.AppendChild(time)
+        let text = new Ele('div').AddClass('comment-content').InnerText(comment.content).Element
+        container.AppendChild(text)
+        let result = container.Element
+        result.dataset.comment = JSON.stringify(comment)
+        return result
+    }
+
+    parseTimeStamp(timeStamp)
+    {
+        let n = timeStamp.split('-')
+        let date = new Date(Date.UTC(n[0],n[1],n[2],n[3],n[4])).toString()
+        let l = date.split(' ')
+        let t = l[4].split(':')
+        return `${l[0]} ${l[1]} ${l[2]} ${l[3]} ${t[0]}:${t[1]}`
+    }
+
+    month(num)
+    {
+        let m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+        return m[num - 1]
     }
 
     resize(){
