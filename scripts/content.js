@@ -225,7 +225,8 @@ class Content {
     parseTimeStamp(timeStamp)
     {
         let n = timeStamp.split('-')
-        let date = new Date(Date.UTC(n[0],n[1],n[2],n[3],n[4])).toString()
+        let mnth = Number(n[1]) - 1
+        let date = new Date(Date.UTC(n[0],mnth,n[2],n[3],n[4])).toString()
         let l = date.split(' ')
         let t = l[4].split(':')
         return `${l[0]} ${l[1]} ${l[2]} ${l[3]} ${t[0]}:${t[1]}`
