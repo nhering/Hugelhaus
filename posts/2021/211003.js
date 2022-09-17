@@ -3,8 +3,6 @@ let slides_211003 = JSON.stringify([
     ['/images/2021/10/20211003_112747.jpg','The first time I&apos;ve had a fire in the burn pile.']
 ])
 
-console.log(slides_211003)
-
 content.innerHTML = `\
     <h1>Smoke 'em Out</h1>\
     <h5>Sunday October 3 2021</h5>\

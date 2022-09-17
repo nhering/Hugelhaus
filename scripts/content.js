@@ -73,8 +73,11 @@ class Content {
         this.div.appendChild(container)
         this.buildSlides()
         this.resize()
-        this.addTagsSection(container)
-        this.addCommentsSection(container)
+        if(this.post)
+        {
+            this.addTagsSection(container)
+            this.addCommentsSection(container)
+        }
     }
 
     set src(src){
@@ -195,7 +198,6 @@ class Content {
             .then((res) => {
                 res.result.sort(this.compareComment)
                 res.result.forEach((comment) => {
-                    console.log(comment)
                     commentsDiv.appendChild(this.comment(comment))
                 })
             })

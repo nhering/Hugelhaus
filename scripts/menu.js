@@ -23,7 +23,6 @@ class Menu {
     }
 
     syncLocalStorage(push = false){
-        console.log('syncLocalStorage')
         if (push)
         {
             localStorage.setItem('menuState',JSON.stringify(this.state))
@@ -41,7 +40,6 @@ class Menu {
     }
 
     loadItems(posts){
-        // console.log('loadItems')
         let list = document.querySelector('.menu-list')
         if (list) list.remove()
 
@@ -115,7 +113,6 @@ class Menu {
     }
 
     sortPosts(a,b){
-        // console.log('sortPosts')
         let ay = `${a.year}`.padStart(4,'0')
         let am = `${a.month}`.padStart(2,'0')
         let ad = `${a.day}`.padStart(2,'0')
