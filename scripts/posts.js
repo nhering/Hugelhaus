@@ -181,6 +181,13 @@ const posts = [
         ],
         src: './posts/2022/220417.js',
     },
+    {   id: 220430, year: 2022, month: 04, day: 30,
+        menuText: "Clearing The Gate",
+        tags: [
+            tags.CLEAN_UP, tags.IMPROVEMENTS, tags.YARD
+        ],
+        src: './posts/2022/220430.js',
+    },
     {   id: 220505, year: 2022, month: 05, day: 05,
         menuText: "Fill Dirt",
         tags: [
