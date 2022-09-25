@@ -188,6 +188,13 @@ const posts = [
         ],
         src: './posts/2022/220430.js',
     },
+    {   id: 220503, year: 2022, month: 05, day: 03,
+        menuText: "Starlink",
+        tags: [
+            tags.UTILITIES
+        ],
+        src: './posts/2022/220503.js',
+    },
     {   id: 220505, year: 2022, month: 05, day: 05,
         menuText: "Fill Dirt",
         tags: [
