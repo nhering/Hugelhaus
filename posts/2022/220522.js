@@ -44,7 +44,7 @@ content.innerHTML = `\
     temptation in the house for the cats. So I set the mouse outside and let it figure out \
     where to go from here.</p>\
     <br>\
-    <div class='slides' data-sources='${slides_220522b}'></div>
+    <div class='slides' data-sources='${slides_220522c}'></div>
     <br>\
     <p>If the mouse comes back in the house; It's on it's own.</p>\
     <br>\
