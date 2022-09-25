@@ -194,5 +194,12 @@ const posts = [
             tags.LITTLE_MOMENTS, tags.YARD
         ],
         src: './posts/2022/220521.js',
+    },
+    {   id: 220522, year: 2022, month: 05, day: 22,
+        menuText: "A Mouse",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.ANIMALS
+        ],
+        src: './posts/2022/220522.js',
     }
 ]
