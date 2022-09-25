@@ -1,6 +1,5 @@
 class Menu {
     constructor(){
-        this.version = '2021-11-26'
         this.left = -240
         this.state = {
             expandedYear: '',
