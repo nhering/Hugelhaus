@@ -19,7 +19,7 @@ content.innerHTML = `\
     <h1>Clearing The Gate</h1>\
     <h5>Saturday April 30 2022</h5>\
     <br>\
-    <p>It's time to see what's in those weeds.</p>\
+    <p>It's time to access the back fence gate.</p>\
     <br>\
     <p>Last summer I could see there was something in the brush that was in front of a \
     gate in the fence. I didn't want to get into that then but the time has come to tackle \
@@ -27,7 +27,7 @@ content.innerHTML = `\
     <br>\
     <div class='slides' data-sources='${slides_220430a}'></div>
     <br>\
-    <p>Here's another picture after the foliage has died back.</p>\
+    <p>Here's a closer picture after the foliage has died back.</p>\
     <br>\
     <div class='slides' data-sources='${slides_220430b}'></div>
     <br>\
