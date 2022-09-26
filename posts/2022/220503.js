@@ -11,15 +11,15 @@ content.innerHTML = `\
     <h1>Starlink</h1>\
     <h5>Tuesday May 03 2022</h5>\
     <br>\
-    <p>The transceiver is delivered.</p>\
+    <p>The transceiver was finally delivered.</p>\
     <br>\
-    <p>On July 12 2021 I preordered Starlink service. At the time the service was in the beta phase \
+    <p>In July 2021 I preordered Starlink service. At the time the service was in the beta phase \
     of development. Their website stated "Starlink is targeting coverage in your area in mid to late \
-    2021. For reasons that are out of the scope of this article, they were delayed.</p>\
+    2021." For reasons that are outside of the scope of this article, they were delayed.</p>\
     <br>\
     <p>Since then, I've been relying on my phone carrier's hotspot service to keep me working from \
     home. While that service has been sufficient, it did come with a limiting factor. I was accustomed \
-    to streaming services and the hotspot has a data cap per month. That made it so, my internet was really \
+    to streaming services and the hotspot has a data cap per month. That made it so my internet was really \
     only for work. There are worse things to deal with, but it was a let down.</p>\
     <br>\
     <div class='slides' data-sources='${slides_220503a}'></div>
@@ -28,7 +28,8 @@ content.innerHTML = `\
     <br>\
     <div class='slides' data-sources='${slides_220503b}'></div>
     <br>\
-    <p>The speeds are more than I needed to work from home and there is no data cap per month at this \
+    <p>The speeds are more than I need to work from home and there is no data cap per month at this \
     point. I hope they don't cap the data in the future. So far it's been better than using the hotspot \
-    on my phone.</p>\
+    on my phone. But it does cut out when it rains, so I've been keeping my phone's hotspot service \
+    active as a backup. I'm not sure how the snow in winter will effect the service.</p>\
 `
