@@ -1,4 +1,4 @@
-let slides_220605a = JSON.stringify([
+let slides_220605 = JSON.stringify([
     ['/images/2022/06/20220605_141143.jpg','Mint seeds are very small.'],
     ['/images/2022/06/20220605_142137.jpg','Mint seeds are very small.'],
     ['/images/2022/06/20220605_141132.jpg','Multiple seeds per pot.'],
@@ -21,7 +21,7 @@ content.innerHTML = `\
     buying as much and can yield a lot more quickly. However, I've heard it's not very \
     easy to grow mint from seed. I guess I'm about to find out.</p>\
     <br>\
-    <div class='slides' data-sources='${slides_220522a}'></div>
+    <div class='slides' data-sources='${slides_220605}'></div>
     <br>\
     <p>I watched them and made sure they had moisture in the soil but not even one \
     sprouted. Oh well, maybe I'll try again. I think the problem was the temperature \
