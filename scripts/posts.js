@@ -215,5 +215,12 @@ const posts = [
             tags.LITTLE_MOMENTS, tags.ANIMALS
         ],
         src: './posts/2022/220522.js',
+    },
+    {   id: 220605, year: 2022, month: 06, day: 05,
+        menuText: "Germinating Mint",
+        tags: [
+            tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2022/220605.js',
     }
 ]
