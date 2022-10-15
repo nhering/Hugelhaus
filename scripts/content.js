@@ -268,7 +268,6 @@ class Slide {
         this.img
         this.caption
         this.sources = JSON.parse(this.ele.dataset.sources)
-        // this.basePath = `${window.location.href.split(data.root)[0]}${data.root}`
         this.localPath = this.sources[0][0]
         this.currentIndex = 0
         this.buildPresentationElements()
@@ -335,8 +334,18 @@ class Slide {
 
     changeSource()
     {
-        // this.img.src = `file:///D:/Documents/VSCode/Hugelhaus${this.sources[this.currentIndex][0]}`
-        this.img.src = `http://www.hugelhaus.com${this.sources[this.currentIndex][0]}`
+        this.img.src = `${this.Host}${this.sources[this.currentIndex][0]}`
         this.caption.innerText = this.sources[this.currentIndex][1]
+    }
+
+    /**
+     * This detects if the window location is local for development
+     * purposes or hosted on a server. If it's hosted the location.host
+     * will be the correct file location. If not, it will build the
+     * local path to the repo.
+     */
+    get Host()
+    {
+        return window.location.host ? window.location.host : `${window.location.origin}${window.location.pathname.replace('/index.html','')}`
     }
 }

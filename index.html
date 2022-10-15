@@ -37,11 +37,11 @@
         <div id="menu"></div>
         <div id="content"></div>
     </body>
-    <script>        
+    <script>
         let funtilityApi, funtilityUi, menu, content
         window.onload = () => {
-            funtilityApi = new FuntilityAPI("Hügelhaus")
-            // funtilityApi = new FuntilityAPI("Hügelhaus",'http://localhost:5194/')
+            // detect if this is the development environment or hosted on a server
+            funtilityApi = window.location.host ? new FuntilityAPI("Hügelhaus") : new FuntilityAPI("Hügelhaus",'http://localhost:5194/')
             funtilityUi = new FuntilityUI(funtilityApi)
             menu = new Menu()
             content = new Content()
