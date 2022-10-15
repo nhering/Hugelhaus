@@ -5,4 +5,4 @@ This is a blog site dedicated to documenting the home improvements and times spe
 
 Visit the site at:
 
-https://nhering.github.io/Hugelhaus/
+https://www.hugelhaus.com
