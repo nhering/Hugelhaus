@@ -335,8 +335,8 @@ class Slide {
 
     changeSource()
     {
-        this.img.src = `file:///D:/Documents/VSCode/Hugelhaus${this.sources[this.currentIndex][0]}`
-        // this.img.src = `http://www.hugelhaus.com${this.sources[this.currentIndex][0]}`
+        // this.img.src = `file:///D:/Documents/VSCode/Hugelhaus${this.sources[this.currentIndex][0]}`
+        this.img.src = `http://www.hugelhaus.com${this.sources[this.currentIndex][0]}`
         this.caption.innerText = this.sources[this.currentIndex][1]
     }
 }
