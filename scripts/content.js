@@ -332,6 +332,7 @@ class Slide {
         this.changeSource()
     }
 
+
     changeSource()
     {
         this.img.src = `${this.Host}${this.sources[this.currentIndex][0]}`
@@ -346,6 +347,6 @@ class Slide {
      */
     get Host()
     {
-        return window.location.host ? window.location.host : `${window.location.origin}${window.location.pathname.replace('/index.html','')}`
+        return window.location.host ? `http://${window.location.host}` : `${window.location.origin}${window.location.pathname.replace('/index.html','')}`
     }
 }
