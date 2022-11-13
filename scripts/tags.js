@@ -1,6 +1,5 @@
 const tags = {
     ANIMALS: "Animals",
-    ATTIC: "Attic",
     BASEMENT: "Basement",
     BATHROOM: "Bathroom",
     BEDROOM: "Bedroom",
@@ -14,7 +13,6 @@ const tags = {
     LITTLE_MOMENTS: "Little Moments",
     LIVINGROOM: "Livingroom",
     MOVE_IN: "Move In",
-    PLANTS: "Plants",
     PLUMBING: "Plumbing",
     PROJECTS: "Projects",
     REPAIRS: "Repairs",
