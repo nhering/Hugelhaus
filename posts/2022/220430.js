@@ -10,7 +10,7 @@ let slides_220430b = JSON.stringify([
 let slides_220430c = JSON.stringify([
     ['/images/2022/04/20220430_084116.jpg','About an hour or so into the process.'],
     ['/images/2022/04/20220430_092632.jpg','I discover lots of plastic behind the crate and pile it up to be dealt with later.'],
-    ['/images/2022/04/20220430_102141.jpg','The bruch is now completely gone.'],
+    ['/images/2022/04/20220430_102141.jpg','The brush is now completely gone.'],
     ['/images/2022/04/20220430_102912.jpg','It&apos;s constructed of pallets attached to a piece of plastic as the base.'],
     ['/images/2022/04/20220430_120825.jpg','The non burnable parts are all that is left.']
 ])

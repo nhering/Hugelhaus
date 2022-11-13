@@ -46,6 +46,6 @@ content.innerHTML = `\
     <br>\
     <div class='slides' data-sources='${slides_220522c}'></div>
     <br>\
-    <p>If the mouse comes back in the house; It's on it's own.</p>\
+    <p>If the mouse comes back in the house; It's on its own.</p>\
     <br>\
 `

@@ -332,7 +332,6 @@ class Slide {
         this.changeSource()
     }
 
-
     changeSource()
     {
         this.img.src = `${this.Host}${this.sources[this.currentIndex][0]}`
@@ -342,8 +341,8 @@ class Slide {
     /**
      * This detects if the window location is local for development
      * purposes or hosted on a server. If it's hosted the location.host
-     * will be the correct file location. If not, it will build the
-     * local path to the repo.
+     * will be the hosted location on the server. If not, it will build
+     * the local path to the repo.
      */
     get Host()
     {
