@@ -36,7 +36,7 @@ let slides_220926b = JSON.stringify([
 ])
 
 content.innerHTML = `\
-    <h1>Yard Update</h1>\
+    <h1>Back Yard Update</h1>\
     <h5>Monday September 26 2022</h5>\
     <br>\
     <p>A little work at a time made a big difference.</p>\

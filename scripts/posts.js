@@ -231,11 +231,18 @@ const posts = [
         src: './posts/2022/220617.js'
     },
     {   id: 220926, year: 2022, month: 09, day: 26,
-        menuText: "Yard Update",
+        menuText: "Back Yard Update",
         tags: [
             tags.PROJECTS, tags.YARD
         ],
         src: './posts/2022/220926.js'
+    },
+    {   id: 221030, year: 2022, month: 10, day: 30,
+        menuText: "Front Yard",
+        tags: [
+            tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2022/221030.js'
     },
     {   id: 221113, year: 2022, month: 11, day: 13,
         menuText: "First Snow",
