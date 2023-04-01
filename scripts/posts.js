@@ -236,5 +236,12 @@ const posts = [
             tags.PROJECTS, tags.YARD
         ],
         src: './posts/2022/220926.js'
+    },
+    {   id: 221113, year: 2022, month: 11, day: 13,
+        menuText: "First Snow",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.YARD
+        ],
+        src: './posts/2022/221113.js'
     }
 ]
