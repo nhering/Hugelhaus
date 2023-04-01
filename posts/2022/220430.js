@@ -35,4 +35,7 @@ content.innerHTML = `\
     By 8:30 am I had a pretty good fire going. The whole thing took me about four hours.</p>\
     <br>\
     <div class='slides' data-sources='${slides_220430c}'></div>
+    <br>\
+    <p>The last part of this project was to open the gate and remove one section of the\
+    fence next to it to allow wildlife access.</p>\
 `

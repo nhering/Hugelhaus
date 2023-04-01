@@ -230,6 +230,13 @@ const posts = [
         ],
         src: './posts/2022/220617.js'
     },
+    {   id: 220621, year: 2022, month: 06, day: 21,
+        menuText: "Winkle's Gate",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.YARD, tags.ANIMALS
+        ],
+        src: './posts/2022/220621.js'
+    },
     {   id: 220625, year: 2022, month: 06, day: 25,
         menuText: "Lego Collection",
         tags: [
