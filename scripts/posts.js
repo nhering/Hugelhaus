@@ -244,6 +244,13 @@ const posts = [
         ],
         src: './posts/2022/221030.js'
     },
+    {   id: 221104, year: 2022, month: 11, day: 04,
+        menuText: "Last Fire",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.YARD
+        ],
+        src: './posts/2022/221104.js'
+    },
     {   id: 221113, year: 2022, month: 11, day: 13,
         menuText: "First Snow",
         tags: [
