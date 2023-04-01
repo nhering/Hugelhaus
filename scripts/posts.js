@@ -222,13 +222,20 @@ const posts = [
             tags.PROJECTS, tags.YARD
         ],
         src: './posts/2022/220605.js'
-    },,
+    },
     {   id: 220617, year: 2022, month: 06, day: 17,
         menuText: "Blue Skies",
         tags: [
             tags.LITTLE_MOMENTS, tags.YARD
         ],
         src: './posts/2022/220617.js'
+    },
+    {   id: 220716, year: 2022, month: 07, day: 16,
+        menuText: "Hawk Perch",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.YARD, tags.ANIMALS
+        ],
+        src: './posts/2022/220716.js'
     },
     {   id: 220926, year: 2022, month: 09, day: 26,
         menuText: "Back Yard Update",
