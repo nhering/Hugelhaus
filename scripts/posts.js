@@ -167,6 +167,13 @@ const posts = [
         ],
         src: './posts/2022/220206.js'
     },
+    {   id: 220223, year: 2022, month: 02, day: 23,
+        menuText: "Trapped",
+        tags: [
+            tags.ANIMALS, tags.YARD
+        ],
+        src: './posts/2022/220223.js'
+    },
     {   id: 220401, year: 2022, month: 04, day: 01,
         menuText: "Burn Pile Upgrade",
         tags: [

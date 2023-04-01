@@ -1,7 +1,7 @@
 let slides_220621 = JSON.stringify([
-    ['/images/2022/06/20220621_100632.jpg','caption'],
-    ['/images/2022/06/20220621_100655.jpg','caption'],
-    ['/images/2022/06/20220621_101055.jpg','caption']
+    ['/images/2022/06/20220621_100632.jpg',''],
+    ['/images/2022/06/20220621_100655.jpg',''],
+    ['/images/2022/06/20220621_101055.jpg','']
 ])
 
 content.innerHTML = `\
