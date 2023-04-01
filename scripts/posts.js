@@ -251,6 +251,13 @@ const posts = [
         ],
         src: './posts/2022/220625.js'
     },
+    {   id: 220714, year: 2022, month: 07, day: 14,
+        menuText: "Reptile Egss",
+        tags: [
+            tags.ANIMALS, tags.YARD
+        ],
+        src: './posts/2022/220714.js'
+    },
     {   id: 220716, year: 2022, month: 07, day: 16,
         menuText: "Hawk Perch",
         tags: [

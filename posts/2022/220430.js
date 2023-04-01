@@ -25,6 +25,8 @@ content.innerHTML = `\
     gate in the fence. I didn't want to get into that then but the time has come to tackle \
     that project.</p>\
     <br>\
+    <p>Also, since the trapped deer incedent, I've want to open it up for that reason too.</p>\
+    <br>\
     <div class='slides' data-sources='${slides_220430a}'></div>
     <br>\
     <p>Here's a closer picture after the foliage has died back.</p>\
