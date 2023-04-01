@@ -237,6 +237,13 @@ const posts = [
         ],
         src: './posts/2022/220716.js'
     },
+    {   id: 220813, year: 2022, month: 08, day: 13,
+        menuText: "Watching Paint Dry",
+        tags: [
+            tags.GARAGE, tags.CLEAN_UP
+        ],
+        src: './posts/2022/220813.js'
+    },
     {   id: 220926, year: 2022, month: 09, day: 26,
         menuText: "Back Yard Update",
         tags: [
