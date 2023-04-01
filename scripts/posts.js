@@ -230,6 +230,13 @@ const posts = [
         ],
         src: './posts/2022/220617.js'
     },
+    {   id: 220625, year: 2022, month: 06, day: 25,
+        menuText: "Lego Collection",
+        tags: [
+            tags.MOVE_IN, tags.LITTLE_MOMENTS, tags.LIVINGROOM
+        ],
+        src: './posts/2022/220625.js'
+    },
     {   id: 220716, year: 2022, month: 07, day: 16,
         menuText: "Hawk Perch",
         tags: [

@@ -1,6 +1,6 @@
 // NOTE: Do not add the dot to the begining of the source paths
 let slides_000000 = JSON.stringify([
-    ['/images/2021/04/20210401_153001.jpg','caption text']
+    ['/images/2021/04/.jpg','caption']
 ])
 
 content.innerHTML = `\
