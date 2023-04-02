@@ -230,6 +230,13 @@ const posts = [
         ],
         src: './posts/2022/220605.js'
     },
+    {   id: 220606, year: 2022, month: 06, day: 06,
+        menuText: "Driveway",
+        tags: [
+            tags.CLEAN_UP, tags.PROJECTS, tags.IMPROVEMENTS
+        ],
+        src: './posts/2022/220606.js'
+    },
     {   id: 220617, year: 2022, month: 06, day: 17,
         menuText: "Blue Skies",
         tags: [
