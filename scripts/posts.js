@@ -300,6 +300,13 @@ const posts = [
         ],
         src: './posts/2022/221104.js'
     },
+    {   id: 221105, year: 2022, month: 11, day: 05,
+        menuText: "Cat Feeder",
+        tags: [
+            tags.ANIMALS, tags.PROJECTS
+        ],
+        src: './posts/2022/221105.js'
+    },
     {   id: 221113, year: 2022, month: 11, day: 13,
         menuText: "First Snow",
         tags: [
