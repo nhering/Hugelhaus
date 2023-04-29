@@ -117,7 +117,7 @@ class Content {
             tag.innerText  = t
             ele.appendChild(tag)
         })
-        container.appendChild(ele.Element)
+        container.appendChild(ele)
     }
 
     addCommentsSection(container)
