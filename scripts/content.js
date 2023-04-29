@@ -72,7 +72,7 @@ class Content {
         let container = document.createElement('div')
         container.classList.add('container')
         container.innerHTML = html
-        
+
         this.div.appendChild(container)
         this.buildSlides()
         this.resize()
@@ -108,7 +108,7 @@ class Content {
 
         let legend = document.createElement('legend')
         legend.classList.add('legend')
-        legend.innerText('TAGS')
+        legend.innerText = 'TAGS'
         ele.appendChild(legend)
 
         this.post.tags.forEach((t) => {
