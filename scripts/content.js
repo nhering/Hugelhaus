@@ -115,7 +115,7 @@ class Content {
             let tag = document.createElement('div')
             tag.classList.add('tag')
             tag.innerText  = t
-            ele.AppendChild(tag)
+            ele.appendChild(tag)
         })
         container.appendChild(ele.Element)
     }
