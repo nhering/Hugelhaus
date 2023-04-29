@@ -69,7 +69,10 @@ class Content {
     }
 
     set innerHTML(html){
-        let container = new Ele('div').AddClass('container').InnerHTML(html).Element
+        let container = document.createElement('div')
+        container.classList.add('container')
+        container.innerHTML = html
+        
         this.div.appendChild(container)
         this.buildSlides()
         this.resize()
@@ -100,54 +103,70 @@ class Content {
     }
 
     addTagsSection(container){
-        let ele = new Ele('fieldset').AddClass('tags')
-        ele.AppendChild(new Ele('legend').AddClass('legend').InnerText('TAGS').Element)
+        let ele = document.createElement('fieldset')
+        ele.classList.add('tags')
+
+        let legend = document.createElement('legend')
+        legend.classList.add('legend')
+        legend.innerText('TAGS')
+        ele.appendChild(legend)
+
         this.post.tags.forEach((t) => {
-            ele.AppendChild(new Ele('div').AddClass('tag').InnerText(t).Element)
+            let tag = document.createElement('div')
+            tag.classList.add('tag')
+            tag.innerText  = t
+            ele.AppendChild(tag)
         })
         container.appendChild(ele.Element)
     }
 
     addCommentsSection(container)
     {
-        let ele = new Ele('fieldset').AddClass('comments')
-        ele.AppendChild(new Ele('legend').AddClass('legend').InnerText('COMMENTS').Element)
-        ele.AppendChild(this.commentInput)
-        ele.AppendChild(this.commentSaveButton)
-        ele.AppendChild(this.commentsDiv)
-        container.appendChild(ele.Element)
+        let ele = document.createElement('fieldset')
+        ele.classList.add('comments')
+
+        let legend = document.createElement('legend')
+        legend.classList.add('legend')
+        legend.innerText = 'COMMENTS'
+        
+        ele.appendChild(legend)
+        ele.appendChild(this.commentInput)
+        ele.appendChild(this.commentSaveButton)
+        ele.appendChild(this.commentsDiv)
+
+        container.appendChild(ele)
         this.loadComments()
     }
 
     get commentInput()
     {
-        let result = new Ele('textarea').Id('newComment').AddClass('comment')
+        let txtArea = document.createElement('textarea')
+        txtArea.id = 'newComment'
+        txtArea.classList.add('comment')
         if (funtilityApi.userIsSignedIn)
         {
-            result
-                .Placeholder('Care to comment?')
+            txtArea.placeholder = 'Care to comment'
         } else {
             funtilityApi.signOut
-            result
-                .Placeholder('You must be signed in to comment.')
-                .Disable()
+            txtArea.placeholder = 'You must be signed in to comment.'
+            txtArea.setAttribute('disabled', true)
         }
-        return result.Element
+        return txtArea
     }
 
     get commentSaveButton()
     {
         if (funtilityApi.userIsSignedIn)
         {
-            return new Ele('button')
-                .AddClass('save-comment')
-                .InnerText('Save Comment')
-                .Event_Click(() => { 
-                    this.saveComment()
-                })
-                .Element
+            let btn = document.createElement('button')
+            btn.classList.add('save-comment')
+            btn.innerText = 'Save Comment'
+            btn.addEventListener('click', () => {
+                this.saveComment()
+            })
+            return btn
         } else {
-            return new Ele('div').Element
+            return document.createElement('div')
         }
     }
 
@@ -185,9 +204,9 @@ class Content {
 
     get commentsDiv()
     {
-        return new Ele('div')
-            .Id('comments')
-            .Element
+        let result = document.createElement('div')
+        result.id = 'comments'
+        return result
     }
 
     loadComments()
@@ -212,14 +231,25 @@ class Content {
 
     comment(comment)
     {
-        let container = new Ele('div').AddClass('comment').Id(comment.commentId)
-        let name = new Ele('div').AddClass('name').InnerText(comment.userName).Element
-        container.AppendChild(name)
-        let time = new Ele('div').AddClass('time').InnerText(this.parseTimeStamp(comment.timeStamp)).Element
-        container.AppendChild(time)
-        let text = new Ele('div').AddClass('comment-content').InnerText(comment.content).Element
-        container.AppendChild(text)
-        let result = container.Element
+        let container = document.createElement('div')
+        container.id = comment.commentId
+        container.classList.add('comment')
+
+        let name = document.createElement('div')
+        name.classList.add('name')
+        name.innerText = comment.userName
+        container.appendChild(name)
+
+        let time = document.createElement('div')
+        time.classList.add('time')
+        time.innerText= this.parseTimeStamp(comment.timeStamp)
+        container.appendChild(time)
+
+        let text = document.createElement('div')
+        text.classList.add('comment-content')
+        text.innerText = comment.content
+        container.appendChild(text)
+
         result.dataset.comment = JSON.stringify(comment)
         return result
     }
