@@ -327,5 +327,12 @@ const posts = [
             tags.LITTLE_MOMENTS, tags.YARD
         ],
         src: './posts/2022/221113.js'
+    },
+    {   id: 230402, year: 2023, month: 4, day: 2,
+        menuText: "Cat House & Feeder Update",
+        tags: [
+            tags.ANIMALS, tags.PROJECTS
+        ],
+        src: './posts/2023/230402.js'
     }
 ]
