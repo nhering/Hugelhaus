@@ -328,6 +328,13 @@ const posts = [
         ],
         src: './posts/2022/221113.js'
     },
+    {   id: 230303, year: 2023, month: 3, day: 3,
+        menuText: "Entertainment Wall Phase 1",
+        tags: [
+            tags.IMPROVEMENTS, tags.LIVINGROOM, tags.PROJECTS, tags.REPAIRS
+        ],
+        src: './posts/2023/230303.js'
+    },
     {   id: 230402, year: 2023, month: 4, day: 2,
         menuText: "Cat House & Feeder Update",
         tags: [
