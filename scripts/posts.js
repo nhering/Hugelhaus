@@ -355,5 +355,12 @@ const posts = [
             tags.KITCHEN, tags.REPAIRS
         ],
         src: './posts/2023/230404.js'
+    },
+    {   id: 230408, year: 2023, month: 4, day: 8,
+        menuText: "Seed Growing Station",
+        tags: [
+            tags.KITCHEN, tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2023/230408.js'
     }
 ]
