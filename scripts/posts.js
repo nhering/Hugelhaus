@@ -362,5 +362,12 @@ const posts = [
             tags.KITCHEN, tags.PROJECTS, tags.YARD
         ],
         src: './posts/2023/230408.js'
+    },
+    {   id: 230427, year: 2023, month: 4, day: 27,
+        menuText: "Not The Droids...",
+        tags: [
+            tags.LITTLE_MOMENTS, tags.LIVINGROOM
+        ],
+        src: './posts/2023/230427.js'
     }
 ]
