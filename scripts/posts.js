@@ -335,6 +335,13 @@ const posts = [
         ],
         src: './posts/2023/230303.js'
     },
+    {   id: 230316, year: 2023, month: 3, day: 16,
+        menuText: "Pellet Stove Breakdown",
+        tags: [
+            tags.LIVINGROOM, tags.REPAIRS, tags.UTILITIES
+        ],
+        src: './posts/2023/230316.js'
+    },
     {   id: 230330, year: 2023, month: 3, day: 30,
         menuText: "First Burn",
         tags: [
