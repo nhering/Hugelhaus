@@ -335,6 +335,13 @@ const posts = [
         ],
         src: './posts/2023/230303.js'
     },
+    {   id: 230330, year: 2023, month: 3, day: 30,
+        menuText: "First Burn",
+        tags: [
+            tags.CLEAN_UP, tags.LITTLE_MOMENTS, tags.YARD
+        ],
+        src: './posts/2023/230330.js'
+    },
     {   id: 230402, year: 2023, month: 4, day: 2,
         menuText: "Cat House & Feeder Update",
         tags: [
