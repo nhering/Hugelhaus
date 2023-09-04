@@ -369,5 +369,12 @@ const posts = [
             tags.LITTLE_MOMENTS, tags.LIVINGROOM
         ],
         src: './posts/2023/230427.js'
+    },
+    {   id: 230820, year: 2023, month: 8, day: 20,
+        menuText: "Fallen Oak Tree Removal",
+        tags: [
+            tags.CLEAN_UP, tags.IMPROVEMENTS, tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2023/230820.js'
     }
 ]
