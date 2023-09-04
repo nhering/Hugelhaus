@@ -363,6 +363,13 @@ const posts = [
         ],
         src: './posts/2023/230404.js'
     },
+    {   id: 230407, year: 2023, month: 4, day: 7,
+        menuText: "Picture Window Treatment",
+        tags: [
+            tags.LIVINGROOM, tags.IMPROVEMENTS, tags.PROJECTS
+        ],
+        src: './posts/2023/230407.js'
+    },
     {   id: 230408, year: 2023, month: 4, day: 8,
         menuText: "Seed Growing Station",
         tags: [
