@@ -286,6 +286,13 @@ const posts = [
         ],
         src: './posts/2022/220813.js'
     },
+    {   id: 220916, year: 2022, month: 9, day: 16,
+        menuText: "Potato Harvest",
+        tags: [
+            tags.PLANTS, tags.PROJECTS
+        ],
+        src: './posts/2022/220916.js'
+    },
     {   id: 220926, year: 2022, month: 9, day: 26,
         menuText: "Back Yard Update",
         tags: [
