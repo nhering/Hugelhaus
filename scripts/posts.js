@@ -334,5 +334,12 @@ const posts = [
             tags.ANIMALS, tags.PROJECTS
         ],
         src: './posts/2023/230402.js'
+    },
+    {   id: 230404, year: 2023, month: 4, day: 4,
+        menuText: "Chimney Fail",
+        tags: [
+            tags.REPAIRS
+        ],
+        src: './posts/2023/230404.js'
     }
 ]
