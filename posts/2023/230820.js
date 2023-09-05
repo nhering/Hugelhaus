@@ -106,7 +106,7 @@ content.innerHTML = `\
     <div class='slides' data-sources='${slides_230820c}'></div>
     <br>\
     <p>After all the burning and clean up, there were bare dirt patches. So, I planted some
-    grass and let it fill out for a afew weeks. It looks pretty much cleaned up from the
+    grass and let it fill out for a few weeks. It looks pretty much cleaned up from the
     picture, but there are still some annoying ruts left behind. That'll have to be something
     I take care of another time.</p>\
     <br>\
