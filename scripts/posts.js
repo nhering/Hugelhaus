@@ -307,6 +307,13 @@ const posts = [
         ],
         src: './posts/2022/220926.js'
     },
+    {   id: 221029, year: 2022, month: 10, day: 29,
+        menuText: "Sick Henry",
+        tags: [
+            tags.ANIMALS
+        ],
+        src: './posts/2022/221029.js'
+    },
     {   id: 221030, year: 2022, month: 10, day: 30,
         menuText: "Front Yard",
         tags: [
