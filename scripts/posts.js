@@ -307,6 +307,13 @@ const posts = [
         ],
         src: './posts/2022/220926.js'
     },
+    {   id: 221011, year: 2022, month: 10, day: 11,
+        menuText: "Vinyl Fence Removal",
+        tags: [
+            tags.CLEAN_UP, tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2022/221011.js'
+    },
     {   id: 221029, year: 2022, month: 10, day: 29,
         menuText: "Sick Henry",
         tags: [
