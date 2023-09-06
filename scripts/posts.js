@@ -286,6 +286,13 @@ const posts = [
         ],
         src: './posts/2022/220813.js'
     },
+    {   id: 220820, year: 2022, month: 8, day: 20,
+        menuText: "Fallen Oak Tree Removal",
+        tags: [
+            tags.CLEAN_UP, tags.IMPROVEMENTS, tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2022/220820.js'
+    },
     {   id: 220916, year: 2022, month: 9, day: 16,
         menuText: "Potato Harvest",
         tags: [
@@ -412,11 +419,11 @@ const posts = [
         ],
         src: './posts/2023/230427.js'
     },
-    {   id: 230820, year: 2023, month: 8, day: 20,
-        menuText: "Fallen Oak Tree Removal",
+    {   id: 230828, year: 2023, month: 8, day: 28,
+        menuText: "Vinyl Fence Removal (continued)",
         tags: [
-            tags.CLEAN_UP, tags.IMPROVEMENTS, tags.PROJECTS, tags.YARD
+            tags.CLEAN_UP, tags.PROJECTS, tags.YARD
         ],
-        src: './posts/2023/230820.js'
+        src: './posts/2023/230828.js'
     }
 ]
