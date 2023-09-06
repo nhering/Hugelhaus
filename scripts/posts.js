@@ -293,6 +293,13 @@ const posts = [
         ],
         src: './posts/2022/220916.js'
     },
+    {   id: 220924, year: 2022, month: 9, day: 24,
+        menuText: "Septic Groundcover",
+        tags: [
+            tags.PLANTS, tags.PROJECTS, tags.YARD
+        ],
+        src: './posts/2022/220924.js'
+    },
     {   id: 220926, year: 2022, month: 9, day: 26,
         menuText: "Back Yard Update",
         tags: [
