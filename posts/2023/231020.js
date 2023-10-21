@@ -25,7 +25,7 @@ content.innerHTML = `\
     <p>I finally got tired of having no oven.</p>\
     <br>\
     <p>Two years into living without an oven was enough. I didn't mind as
-    much when at least the burners worked, but the oven starte beeping every
+    much when at least the burners worked, but the oven started beeping every
     few minutes any time it was plugged in. That was enough for me to not
     want to use the burners anymore. And after a few months of using a hot
     plate instead of the more powerful burners; that got old.</p>\
