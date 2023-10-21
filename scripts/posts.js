@@ -425,5 +425,12 @@ const posts = [
             tags.CLEAN_UP, tags.PROJECTS, tags.YARD
         ],
         src: './posts/2023/230828.js'
+    },
+    {   id: 231020, year: 2023, month: 10, day: 20,
+        menuText: "Kitchen Updgrade",
+        tags: [
+            tags.KITCHEN, tags.PLUMBING, tags.PROJECTS
+        ],
+        src: './posts/2023/231020.js'
     }
 ]
