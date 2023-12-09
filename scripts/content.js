@@ -173,7 +173,7 @@ class Content {
     saveComment()
     {
         let body = this.saveCommentBody()
-        if (body !== {})
+        if (body)
         {
             let commentsDiv = document.getElementById('comments')
             funtilityApi
@@ -250,8 +250,8 @@ class Content {
         text.innerText = comment.content
         container.appendChild(text)
 
-        result.dataset.comment = JSON.stringify(comment)
-        return result
+        container.dataset.comment = JSON.stringify(comment)
+        return container
     }
 
     parseTimeStamp(timeStamp)
