@@ -261,7 +261,7 @@ class Content {
         let date = new Date(Date.UTC(n[0],mnth,n[2],n[3],n[4])).toString()
         let l = date.split(' ')
         let t = l[4].split(':')
-        return `${l[0]} ${l[1]} ${l[2]} ${l[3]} ${t[0]}:${t[1]}`
+        return `${l[0]} ${l[1]} ${l[2]} ${l[3]}`
     }
 
     resize(){

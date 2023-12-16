@@ -38,6 +38,7 @@ body {
 }
 
 .header-text {
+    grid-area: home-btn;
     display: inline-block;
     font-size: 30px;
     letter-spacing: 2;
@@ -45,7 +46,9 @@ body {
 }
 
 #header {
-    display: inline-block;
+    display: grid;
+    grid-template-areas: 'menu-btn home-btn . funtility';
+    grid-template-columns: auto auto 1fr auto;
     grid-area: header;
     background: rgb(64,64,74);
     border-bottom: solid 3px black;
@@ -53,6 +56,12 @@ body {
     text-shadow: 0 0 5px black;
     letter-spacing: 1;
     z-index: 1;
+}
+
+#funtility {
+    grid-area: funtility;
+    font-size: 18px;
+    padding-top: 8px;
 }
 
 #content {
@@ -85,6 +94,7 @@ p {
 /* #region Menu */
 
 #menubutton {
+    grid-area: menu-btn;
     display: inline-block;
     cursor: pointer;
     font-size: 30px;
